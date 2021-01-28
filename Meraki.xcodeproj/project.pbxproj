@@ -16,7 +16,8 @@
 		85137B8E25C1B15F002F8650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85137B8D25C1B15F002F8650 /* Assets.xcassets */; };
 		85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85137B8F25C1B15F002F8650 /* LaunchScreen.storyboard */; };
 		85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B9D25C1B62E002F8650 /* ProfileViewController.swift */; };
-		853A7B5025C20AE900DF2143 /* LoginStarting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B4F25C20AE900DF2143 /* LoginStarting.storyboard */; };
+		852B59B825C3400100B70621 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B725C3400100B70621 /* MessageViewController.swift */; };
+		852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B925C340F900B70621 /* TabBarViewController.swift */; };
 		853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */; };
 		853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7425C2642800DF2143 /* Roboto-Light.ttf */; };
 		853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */; };
@@ -52,7 +53,8 @@
 		85137B9025C1B15F002F8650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85137B9225C1B15F002F8650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85137B9D25C1B62E002F8650 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		853A7B4F25C20AE900DF2143 /* LoginStarting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStarting.storyboard; sourceTree = "<group>"; };
+		852B59B725C3400100B70621 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		852B59B925C340F900B70621 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		853A7B7425C2642800DF2143 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -133,10 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				85137B8D25C1B15F002F8650 /* Assets.xcassets */,
-				85137B8825C1B15E002F8650 /* HomeViewController.swift */,
-				8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */,
-				8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */,
-				85137B9D25C1B62E002F8650 /* ProfileViewController.swift */,
+				852B59B625C31FBC00B70621 /* Main 5 */,
 				8588A9D225C1B75D003CADDF /* Starting */,
 			);
 			path = "View Controllers";
@@ -147,9 +146,21 @@
 			children = (
 				85137B8F25C1B15F002F8650 /* LaunchScreen.storyboard */,
 				85137B8A25C1B15E002F8650 /* Main.storyboard */,
-				853A7B4F25C20AE900DF2143 /* LoginStarting.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		852B59B625C31FBC00B70621 /* Main 5 */ = {
+			isa = PBXGroup;
+			children = (
+				852B59B925C340F900B70621 /* TabBarViewController.swift */,
+				85137B8825C1B15E002F8650 /* HomeViewController.swift */,
+				8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */,
+				8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */,
+				85137B9D25C1B62E002F8650 /* ProfileViewController.swift */,
+				852B59B725C3400100B70621 /* MessageViewController.swift */,
+			);
+			path = "Main 5";
 			sourceTree = "<group>";
 		};
 		853A7B7225C2642800DF2143 /* Roboto */ = {
@@ -245,7 +256,6 @@
 				853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */,
 				853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */,
 				853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */,
-				853A7B5025C20AE900DF2143 /* LoginStarting.storyboard in Resources */,
 				853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */,
 				853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */,
 				85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */,
@@ -323,8 +333,10 @@
 				8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
+				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
 				85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */,
 				85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */,
+				852B59B825C3400100B70621 /* MessageViewController.swift in Sources */,
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,
 				8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */,
 				8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */,

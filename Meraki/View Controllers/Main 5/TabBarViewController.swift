@@ -1,23 +1,19 @@
 //
-//  LoginViewController.swift
+//  TabBarViewController.swift
 //  Meraki
 //
-//  Created by Clara Jeon on 1/27/21.
+//  Created by Clara Jeon on 1/28/21.
 //
 
 import UIKit
-import Firebase
-import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
-        
+
         // Do any additional setup after loading the view.
+        self.selectedIndex = 3
     }
     
 
