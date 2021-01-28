@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8511DA3E25C3073A0017ED54 /* Pods_Meraki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */; };
+		8511DA3F25C3073A0017ED54 /* Pods_Meraki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8425C1B15E002F8650 /* AppDelegate.swift */; };
 		85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8625C1B15E002F8650 /* SceneDelegate.swift */; };
 		85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8825C1B15E002F8650 /* HomeViewController.swift */; };
@@ -26,6 +28,20 @@
 		8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8511DA4025C3073A0017ED54 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8511DA3F25C3073A0017ED54 /* Pods_Meraki.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		85137B8125C1B15E002F8650 /* Meraki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meraki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85137B8425C1B15E002F8650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +58,14 @@
 		853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		853A7B7B25C2642800DF2143 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		853A7B9025C3032C00DF2143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewController.swift; sourceTree = "<group>"; };
+		87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.debug.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.debug.xcconfig"; sourceTree = "<group>"; };
+		A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meraki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61CEA9E6D07259397927894 /* Pods-Meraki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.release.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,19 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8511DA3E25C3073A0017ED54 /* Pods_Meraki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48FA0AAE4E96EB5F87A37477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */,
+				F61CEA9E6D07259397927894 /* Pods-Meraki.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		85137B7825C1B15E002F8650 = {
 			isa = PBXGroup;
 			children = (
 				85137B8325C1B15E002F8650 /* Meraki */,
-				853A7B7225C2642800DF2143 /* Roboto */,
-				85137B9225C1B15F002F8650 /* Info.plist */,
 				85137B8225C1B15E002F8650 /* Products */,
+				48FA0AAE4E96EB5F87A37477 /* Pods */,
+				D08D012B343676C7D826FB29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +110,11 @@
 		85137B8325C1B15E002F8650 /* Meraki */ = {
 			isa = PBXGroup;
 			children = (
+				85137B9225C1B15F002F8650 /* Info.plist */,
+				853A7B9025C3032C00DF2143 /* GoogleService-Info.plist */,
 				85137B9925C1B551002F8650 /* Resources */,
 				85137B9C25C1B582002F8650 /* Storyboards */,
+				853A7B7225C2642800DF2143 /* Roboto */,
 				85137B9A25C1B557002F8650 /* View Controllers */,
 			);
 			path = Meraki;
@@ -140,6 +173,14 @@
 			path = Starting;
 			sourceTree = "<group>";
 		};
+		D08D012B343676C7D826FB29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +188,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85137B9525C1B15F002F8650 /* Build configuration list for PBXNativeTarget "Meraki" */;
 			buildPhases = (
+				C7D521735E931134F7283421 /* [CP] Check Pods Manifest.lock */,
 				85137B7D25C1B15E002F8650 /* Sources */,
 				85137B7E25C1B15E002F8650 /* Frameworks */,
 				85137B7F25C1B15E002F8650 /* Resources */,
+				0C2196763053AD6D129646C3 /* [CP] Embed Pods Frameworks */,
+				B82E41A67C01A270BB77478B /* [CP] Copy Pods Resources */,
+				8511DA4025C3073A0017ED54 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +255,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2196763053AD6D129646C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B82E41A67C01A270BB77478B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meraki/Pods-Meraki-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7D521735E931134F7283421 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meraki-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		85137B7D25C1B15E002F8650 /* Sources */ = {
@@ -286,6 +390,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -347,6 +452,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -358,6 +464,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -367,12 +474,14 @@
 		};
 		85137B9625C1B15F002F8650 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T675PC557V;
-				INFOPLIST_FILE = Meraki/Info.plist;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = "$(SRCROOT)/Meraki/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,12 +495,14 @@
 		};
 		85137B9725C1B15F002F8650 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61CEA9E6D07259397927894 /* Pods-Meraki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T675PC557V;
-				INFOPLIST_FILE = Meraki/Info.plist;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = "$(SRCROOT)/Meraki/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

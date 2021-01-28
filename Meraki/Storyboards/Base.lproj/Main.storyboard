@@ -14,7 +14,6 @@
                 <navigationController id="JRK-tO-yBE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="message" catalog="system" id="6HQ-JX-Jz2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gvd-LQ-4is">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,17 +27,16 @@
         <!--Navigation Controller-->
         <scene sceneID="QtT-Rn-GGe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MC8-yB-pkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="dDg-kp-3dW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="TOQ-sB-R4w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jo2-T9-sic">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Vg2-Tp-Y8a" kind="relationship" relationship="rootViewController" id="1VO-Pd-Mbj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MC8-yB-pkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1059" y="451"/>
         </scene>
@@ -147,61 +145,58 @@
         <!--Navigation Controller-->
         <scene sceneID="71y-nP-hgo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lX2-am-lqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="SeD-ly-Dqk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="Kdt-64-3dx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t6t-bs-dI7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="bno-e9-bzF" kind="relationship" relationship="rootViewController" id="90p-Dt-VAY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lX2-am-lqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783" y="439"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WoM-Th-Hob">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YnQ-gS-Mxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="ax3-r9-SCH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="infinity" catalog="system" id="APe-kY-vPS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tdd-jQ-3Bf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="m4T-IT-Axo" kind="relationship" relationship="rootViewController" id="AmJ-V8-yZn"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnQ-gS-Mxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="848" y="439"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cD2-8m-opN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="avd-hO-eSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Umw-FG-aDp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="USo-jW-atL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="POu-Sg-ypG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="RaL-y7-p70" kind="relationship" relationship="rootViewController" id="Yvx-j2-otS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avd-hO-eSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-123" y="439"/>
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="infinity" catalog="system" width="128" height="62"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="message" catalog="system" width="128" height="113"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="heart" catalog="system" width="32" height="32"/>
+        <image name="infinity" catalog="system" width="32" height="32"/>
+        <image name="magnifyingglass" catalog="system" width="32" height="32"/>
+        <image name="message" catalog="system" width="32" height="32"/>
+        <image name="person" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
