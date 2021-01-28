@@ -30,16 +30,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
       // ...
-      if let error = error {
-        // ...
+        print("signin")
+        if let error = error {
+        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+            print("The user has not signed in before or they have since signed out.")
+        } else {
+            print("\(error.localizedDescription)")
+        }
         return
       }
 
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
+        
+      Auth.auth().signIn(with: credential) { (authResult, error) in
+          if let error = error {
+            }
+          else {
+              return
+            }
+            // ...
+            return
+      }
+        
+        NotificationCenter.default.post(name: .signInGoogleCompleted, object: nil)
+        print("afternotif")
     }
-
+    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
@@ -58,7 +76,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
+}
 
+extension Notification.Name {
+    static var signInGoogleCompleted: Notification.Name {
+        return .init(rawValue: #function)
+    }
 }
 

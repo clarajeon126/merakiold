@@ -18,6 +18,8 @@
 		85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B9D25C1B62E002F8650 /* ProfileViewController.swift */; };
 		852B59B825C3400100B70621 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B725C3400100B70621 /* MessageViewController.swift */; };
 		852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B925C340F900B70621 /* TabBarViewController.swift */; };
+		852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852B59D825C3623A00B70621 /* GoogleService-Info.plist */; };
+		852B59DB25C3647200B70621 /* Starting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852B59DA25C3647200B70621 /* Starting.storyboard */; };
 		853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */; };
 		853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7425C2642800DF2143 /* Roboto-Light.ttf */; };
 		853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */; };
@@ -55,12 +57,13 @@
 		85137B9D25C1B62E002F8650 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		852B59B725C3400100B70621 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		852B59B925C340F900B70621 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		852B59D825C3623A00B70621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		852B59DA25C3647200B70621 /* Starting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Starting.storyboard; sourceTree = "<group>"; };
 		853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		853A7B7425C2642800DF2143 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		853A7B7B25C2642800DF2143 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		853A7B9025C3032C00DF2143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				85137B9225C1B15F002F8650 /* Info.plist */,
-				853A7B9025C3032C00DF2143 /* GoogleService-Info.plist */,
+				852B59D825C3623A00B70621 /* GoogleService-Info.plist */,
 				85137B9925C1B551002F8650 /* Resources */,
 				85137B9C25C1B582002F8650 /* Storyboards */,
 				853A7B7225C2642800DF2143 /* Roboto */,
@@ -135,8 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				85137B8D25C1B15F002F8650 /* Assets.xcassets */,
-				852B59B625C31FBC00B70621 /* Main 5 */,
+				8588A9C925C1B70B003CADDF /* LoginViewController.swift */,
+				8588A9CC25C1B715003CADDF /* RegisterViewController.swift */,
 				8588A9D225C1B75D003CADDF /* Starting */,
+				852B59B625C31FBC00B70621 /* Main 5 */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				85137B8F25C1B15F002F8650 /* LaunchScreen.storyboard */,
 				85137B8A25C1B15E002F8650 /* Main.storyboard */,
+				852B59DA25C3647200B70621 /* Starting.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -178,8 +184,6 @@
 		8588A9D225C1B75D003CADDF /* Starting */ = {
 			isa = PBXGroup;
 			children = (
-				8588A9C925C1B70B003CADDF /* LoginViewController.swift */,
-				8588A9CC25C1B715003CADDF /* RegisterViewController.swift */,
 			);
 			path = Starting;
 			sourceTree = "<group>";
@@ -255,6 +259,8 @@
 			files = (
 				853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */,
 				853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */,
+				852B59DB25C3647200B70621 /* Starting.storyboard in Resources */,
+				852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */,
 				853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */,
 				853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */,
 				853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */,
