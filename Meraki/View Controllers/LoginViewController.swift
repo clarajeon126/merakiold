@@ -10,9 +10,57 @@ import Firebase
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var usernameOrEmail: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBAction func signInButton(_ sender: Any) {
+        passwordField.resignFirstResponder()
+        usernameOrEmail.resignFirstResponder()
+        
+        guard let usernameEmail = usernameOrEmail.text, !usernameEmail.isEmpty, let password = passwordField.text, !password.isEmpty else {
+            return
+        }
+        
+        var username: String?
+        var email: String?
+        
+        if usernameEmail.contains("@"), usernameEmail.contains("."){
+            email = usernameEmail
+        }
+        else {
+            username = usernameEmail
+        }
+        //login function
+        AuthManager.shared.loginUser(username: username, email: email, password: password){ success in
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else {
+                    let alert = UIAlertController(title: "Log In Error", message: "Unable to log in to Meraki. Please check your account information or create an account.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordField.isSecureTextEntry = true
+            
+        usernameOrEmail.returnKeyType = .next
+        passwordField.returnKeyType = .continue
+        
+        usernameOrEmail.autocorrectionType = .no
+        passwordField.autocorrectionType = .no
+        
+        usernameOrEmail.autocapitalizationType = .none
+        passwordField.autocapitalizationType = .none
+        
+        usernameOrEmail.delegate = self
+        passwordField.delegate = self
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         //GIDSignIn.sharedInstance().signIn()
@@ -31,18 +79,21 @@ class LoginViewController: UIViewController {
     }
     
     private func updateScreen() {
-        if (GIDSignIn.sharedInstance()?.currentUser) != nil {
+        if (Auth.auth().currentUser) != nil {
             performSegue(withIdentifier: "loginToMain", sender: self)
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameOrEmail {
+            passwordField.becomeFirstResponder()
+        }
+        else if textField == passwordField {
+            signInButton(self)
+        }
+        return true
     }
-    */
-
 }

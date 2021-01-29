@@ -19,8 +19,14 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        
+        handleNotAuthenticated()
+        
+    }
     private func handleNotAuthenticated() {
-        if GIDSignIn.sharedInstance()?.currentUser == nil {
+        if Auth.auth().currentUser == nil {
             let startingStoryBoard = UIStoryboard(name: "Starting", bundle: nil)
             let loginVC = startingStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
             loginVC.modalPresentationStyle = .fullScreen

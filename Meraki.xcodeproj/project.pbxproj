@@ -20,11 +20,15 @@
 		852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B925C340F900B70621 /* TabBarViewController.swift */; };
 		852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852B59D825C3623A00B70621 /* GoogleService-Info.plist */; };
 		852B59DB25C3647200B70621 /* Starting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852B59DA25C3647200B70621 /* Starting.storyboard */; };
+		852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59EE25C37D2700B70621 /* DatabaseManager.swift */; };
+		852B59F125C37D3000B70621 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59F025C37D3000B70621 /* AuthManager.swift */; };
+		852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59F225C37DCE00B70621 /* StorageManager.swift */; };
 		853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */; };
 		853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7425C2642800DF2143 /* Roboto-Light.ttf */; };
 		853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */; };
 		853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7B25C2642800DF2143 /* LICENSE.txt */; };
 		853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */; };
+		856889CA25C3911E009F88D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856889C925C3911E009F88D5 /* Extensions.swift */; };
 		8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */; };
 		8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C925C1B70B003CADDF /* LoginViewController.swift */; };
 		8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CC25C1B715003CADDF /* RegisterViewController.swift */; };
@@ -59,11 +63,15 @@
 		852B59B925C340F900B70621 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		852B59D825C3623A00B70621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		852B59DA25C3647200B70621 /* Starting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Starting.storyboard; sourceTree = "<group>"; };
+		852B59EE25C37D2700B70621 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		852B59F025C37D3000B70621 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		852B59F225C37DCE00B70621 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		853A7B7325C2642800DF2143 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		853A7B7425C2642800DF2143 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		853A7B7B25C2642800DF2143 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		856889C925C3911E009F88D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 			children = (
 				85137B8425C1B15E002F8650 /* AppDelegate.swift */,
 				85137B8625C1B15E002F8650 /* SceneDelegate.swift */,
+				852B59EE25C37D2700B70621 /* DatabaseManager.swift */,
+				852B59F225C37DCE00B70621 /* StorageManager.swift */,
+				852B59F025C37D3000B70621 /* AuthManager.swift */,
+				856889C925C3911E009F88D5 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -337,6 +349,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */,
+				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
+				852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
@@ -346,6 +360,8 @@
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,
 				8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */,
 				8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */,
+				852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */,
+				856889CA25C3911E009F88D5 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +516,7 @@
 				DEVELOPMENT_TEAM = T675PC557V;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/Meraki/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +538,7 @@
 				DEVELOPMENT_TEAM = T675PC557V;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/Meraki/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
