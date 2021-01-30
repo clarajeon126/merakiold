@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
+    
     @IBOutlet weak var usernameOrEmail: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func signInButton(_ sender: Any) {
@@ -75,11 +76,12 @@ class LoginViewController: UIViewController {
     
     @objc private func userDidSignInGoogle(_ notification: Notification) {
         // Update screen after user successfully signed in
+        print(Auth.auth().currentUser)
         updateScreen()
     }
     
     private func updateScreen() {
-        if (Auth.auth().currentUser) != nil {
+        if () != nil {
             performSegue(withIdentifier: "loginToMain", sender: self)
         }
     }
