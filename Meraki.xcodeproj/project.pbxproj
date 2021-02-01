@@ -29,6 +29,9 @@
 		853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7B25C2642800DF2143 /* LICENSE.txt */; };
 		853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */; };
 		856889CA25C3911E009F88D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856889C925C3911E009F88D5 /* Extensions.swift */; };
+		856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */; };
+		856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */; };
+		856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B7D4225C7C0C5009C69A0 /* FullBlock.xib */; };
 		8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */; };
 		8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C925C1B70B003CADDF /* LoginViewController.swift */; };
 		8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CC25C1B715003CADDF /* RegisterViewController.swift */; };
@@ -72,6 +75,9 @@
 		853A7B7B25C2642800DF2143 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		856889C925C3911E009F88D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpportunityCollectionViewCell.swift; path = "Meraki/View Controllers/Custom Cells, Views, etc/OpportunityCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBlockCustomView.swift; sourceTree = "<group>"; };
+		856B7D4225C7C0C5009C69A0 /* FullBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullBlock.xib; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -150,10 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				85137B8D25C1B15F002F8650 /* Assets.xcassets */,
-				8588A9C925C1B70B003CADDF /* LoginViewController.swift */,
-				8588A9CC25C1B715003CADDF /* RegisterViewController.swift */,
 				8588A9D225C1B75D003CADDF /* Starting */,
 				852B59B625C31FBC00B70621 /* Main 5 */,
+				856B7D3625C7BFBF009C69A0 /* Custom Cells, Views, etc */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -193,9 +198,29 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
+		856B7D3625C7BFBF009C69A0 /* Custom Cells, Views, etc */ = {
+			isa = PBXGroup;
+			children = (
+				856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */,
+				856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */,
+			);
+			path = "Custom Cells, Views, etc";
+			sourceTree = "<group>";
+		};
+		856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */,
+				856B7D4225C7C0C5009C69A0 /* FullBlock.xib */,
+			);
+			path = OpportunityCollectionViews;
+			sourceTree = "<group>";
+		};
 		8588A9D225C1B75D003CADDF /* Starting */ = {
 			isa = PBXGroup;
 			children = (
+				8588A9C925C1B70B003CADDF /* LoginViewController.swift */,
+				8588A9CC25C1B715003CADDF /* RegisterViewController.swift */,
 			);
 			path = Starting;
 			sourceTree = "<group>";
@@ -278,6 +303,7 @@
 				853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */,
 				85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */,
 				85137B8E25C1B15F002F8650 /* Assets.xcassets in Resources */,
+				856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */,
 				85137B8C25C1B15E002F8650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +381,8 @@
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
 				85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */,
+				856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */,
+				856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */,
 				85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */,
 				852B59B825C3400100B70621 /* MessageViewController.swift in Sources */,
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,

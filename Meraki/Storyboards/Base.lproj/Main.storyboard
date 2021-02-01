@@ -96,6 +96,10 @@
                                     <action selector="signOutButtonTapped:" destination="bno-e9-bzF" eventType="touchUpInside" id="yLw-gH-Oyd"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-nD-J8j">
+                                <rect key="frame" x="20" y="112" width="102" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TCE-b4-amo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -104,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXE-je-HTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="1186"/>
+            <point key="canvasLocation" x="1782.608695652174" y="1185.9375"/>
         </scene>
         <!--Opportunity View Controller-->
         <scene sceneID="VWS-FE-Y0h">
@@ -113,14 +117,108 @@
                     <view key="view" contentMode="scaleToFill" id="Sk3-jN-g9p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-Jp-a13">
+                                <rect key="frame" x="20" y="98" width="374" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="3vl-sj-VET">
+                                        <rect key="frame" x="0.0" y="0.0" width="765" height="38.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-MT-QZG">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="38.5"/>
+                                                <color key="backgroundColor" red="1" green="0.73935044190248989" blue="0.68885488008616358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                <state key="normal" title="Science">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2T1-Mm-Sef">
+                                                <rect key="frame" x="160" y="0.0" width="124.5" height="38.5"/>
+                                                <color key="backgroundColor" red="1" green="0.60774744179999995" blue="0.56732143580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                <state key="normal" title="Technology">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mj8-O5-PDY">
+                                                <rect key="frame" x="320.5" y="0.0" width="124" height="38.5"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.44973193700136904" blue="0.40350152825306873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                <state key="normal" title="Engineering">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwa-VL-HBg">
+                                                <rect key="frame" x="480.5" y="0.0" width="124.5" height="38.5"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.3616713053478946" blue="0.34057164821465169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                <state key="normal" title="Arts">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTb-9u-xqh">
+                                                <rect key="frame" x="641" y="0.0" width="124" height="38.5"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.22352941176470587" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                                <state key="normal" title="Math">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3vl-sj-VET" firstAttribute="trailing" secondItem="pEs-eK-hdj" secondAttribute="trailing" id="31l-0F-ugr"/>
+                                    <constraint firstItem="3vl-sj-VET" firstAttribute="height" secondItem="KaV-Jp-a13" secondAttribute="height" multiplier="0.859375" id="QBc-ef-Gcr"/>
+                                    <constraint firstItem="3vl-sj-VET" firstAttribute="top" secondItem="pEs-eK-hdj" secondAttribute="top" id="REo-id-zm0"/>
+                                    <constraint firstItem="3vl-sj-VET" firstAttribute="leading" secondItem="pEs-eK-hdj" secondAttribute="leading" id="YzW-8b-52A"/>
+                                    <constraint firstItem="pEs-eK-hdj" firstAttribute="bottom" secondItem="3vl-sj-VET" secondAttribute="bottom" constant="-38.5" id="tZD-kB-BmH"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pEs-eK-hdj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="T9g-B3-eRS"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SGV-tn-72e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SGV-tn-72e" firstAttribute="trailing" secondItem="KaV-Jp-a13" secondAttribute="trailing" constant="20" id="7RB-I8-UZm"/>
+                            <constraint firstItem="7Yx-MT-QZG" firstAttribute="width" secondItem="Sk3-jN-g9p" secondAttribute="width" multiplier="0.3" id="Ffb-r4-oIx"/>
+                            <constraint firstItem="KaV-Jp-a13" firstAttribute="centerX" secondItem="Sk3-jN-g9p" secondAttribute="centerX" id="TWo-ZM-ANh"/>
+                            <constraint firstItem="KaV-Jp-a13" firstAttribute="leading" secondItem="SGV-tn-72e" secondAttribute="leading" constant="20" id="jYM-dL-Zzb"/>
+                            <constraint firstItem="KaV-Jp-a13" firstAttribute="height" secondItem="Sk3-jN-g9p" secondAttribute="height" multiplier="0.05" id="otG-QC-tda"/>
+                            <constraint firstItem="KaV-Jp-a13" firstAttribute="top" secondItem="SGV-tn-72e" secondAttribute="top" constant="10" id="q65-yZ-hjR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JBC-1p-YU2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJw-pB-8Zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="1186"/>
+            <point key="canvasLocation" x="847.82608695652175" y="1185.9375"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="DxI-kG-Yms">
