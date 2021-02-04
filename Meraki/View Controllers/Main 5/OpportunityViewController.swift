@@ -45,7 +45,12 @@ class OpportunityViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.addSubview(FullBlockCustomView(image: UIImage(named: "robot")!, labelIdentifier: "Engineering", mainTitle: "Robotics Summer Camp", subTitle: "Join other females in stem and learn about the Design Process, Engineering Process, and the Business model", type: 2))
+        let fullBlock = FullBlockCustomView(image: UIImage(named: "robot")!, labelIdentifier: "Engineering", mainTitle: "Robotics Summer Camp", subTitle: "Join other females in stem and learn about the Design Process, Engineering Process, and the Business model", type: 2)
+        
+        fullBlock.layer.cornerRadius = 20
+        
+        view.addSubview(fullBlock)
+        
     }
 
 }

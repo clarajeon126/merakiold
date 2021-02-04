@@ -50,9 +50,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if let error = error {
                 print("Error occurs when authenticate with Firebase: \(error.localizedDescription)")
             }
-                
+            
+            let firstName = user.profile.givenName ?? "firstName"
+            let lastName = user.profile.familyName ?? "lastName"
+            let email = user.profile.email ?? "email@gmail.com"
+            
+            DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid") { (success) in
+                if success {
+                }
+                else {
+                }
+            }
+            
             // Post notification after user successfully sign in
             NotificationCenter.default.post(name: .signInGoogleCompleted, object: nil)
+            
         }
     }
     

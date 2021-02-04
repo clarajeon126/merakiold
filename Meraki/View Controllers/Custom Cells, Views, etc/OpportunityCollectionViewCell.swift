@@ -9,4 +9,5 @@ import UIKit
 
 class OpportunityCollectionViewCell: UICollectionViewCell {
     static let identifier = "OpportunityCollectionViewCell"
+    
 }

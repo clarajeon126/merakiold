@@ -12,4 +12,7 @@ public class StorageManager {
     
     static let shared = StorageManager()
     
+    public func addPostImage(image: UIImage){
+        //StorageManager.shared.
+    }
 }

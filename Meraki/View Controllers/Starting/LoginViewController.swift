@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -77,13 +78,12 @@ class LoginViewController: UIViewController {
     @objc private func userDidSignInGoogle(_ notification: Notification) {
         // Update screen after user successfully signed in
         print(Auth.auth().currentUser)
+        DatabaseManager.shared.changeUid()
         updateScreen()
     }
     
     private func updateScreen() {
-        if () != nil {
             performSegue(withIdentifier: "loginToMain", sender: self)
-        }
     }
 
 }

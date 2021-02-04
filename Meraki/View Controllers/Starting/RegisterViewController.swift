@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -21,11 +23,13 @@ class RegisterViewController: UIViewController {
         
         guard let email = emailField.text,!email.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8,
-              let username = usernameField.text, !username.isEmpty else {
+              let username = usernameField.text, !username.isEmpty,
+              let firstName = firstNameField.text, !firstName.isEmpty,
+              let lastName = lastNameField.text, !lastName.isEmpty else {
             return
         }
         
-        AuthManager.shared.registerNewUser(username: username, email: email, password: password) { (registered) in
+        AuthManager.shared.registerNewUser(username: username, email: email, password: password, firstName: firstName, lastName: lastName) { (registered) in
             DispatchQueue.main.async {
                 if registered {
                     
@@ -41,18 +45,27 @@ class RegisterViewController: UIViewController {
         
         passwordField.isSecureTextEntry = true
             
+        firstNameField.returnKeyType = .next
+        lastNameField.returnKeyType = .next
         usernameField.returnKeyType = .next
         emailField.returnKeyType = .next
         passwordField.returnKeyType = .continue
         
+        
+        firstNameField.autocorrectionType = .no
+        lastNameField.autocorrectionType = .no
         usernameField.autocorrectionType = .no
         emailField.autocorrectionType = .no
         passwordField.autocorrectionType = .no
         
+        firstNameField.autocapitalizationType = .none
+        lastNameField.autocapitalizationType = .none
         usernameField.autocapitalizationType = .none
         emailField.autocapitalizationType = .none
         passwordField.autocapitalizationType = .none
         
+        firstNameField.delegate = self
+        lastNameField.delegate = self
         usernameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
@@ -75,7 +88,13 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == usernameField {
+        if textField == firstNameField {
+            lastNameField.becomeFirstResponder()
+        }
+        else if textField == lastNameField {
+            usernameField.becomeFirstResponder()
+        }
+        else if textField == usernameField {
             emailField.becomeFirstResponder()
         }
         else if textField == emailField {

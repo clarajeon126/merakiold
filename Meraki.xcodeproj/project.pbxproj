@@ -32,6 +32,13 @@
 		856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */; };
 		856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */; };
 		856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B7D4225C7C0C5009C69A0 /* FullBlock.xib */; };
+		856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */; };
+		856B7D6825C87245009C69A0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6725C87245009C69A0 /* SettingsViewController.swift */; };
+		856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */; };
+		856B7D6C25C873EF009C69A0 /* CreateOpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */; };
+		856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */; };
+		856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */; };
+		856B7D7225C91679009C69A0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D7125C91678009C69A0 /* Post.swift */; };
 		8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */; };
 		8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C925C1B70B003CADDF /* LoginViewController.swift */; };
 		8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CC25C1B715003CADDF /* RegisterViewController.swift */; };
@@ -78,6 +85,13 @@
 		856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpportunityCollectionViewCell.swift; path = "Meraki/View Controllers/Custom Cells, Views, etc/OpportunityCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBlockCustomView.swift; sourceTree = "<group>"; };
 		856B7D4225C7C0C5009C69A0 /* FullBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullBlock.xib; sourceTree = "<group>"; };
+		856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityDepthViewController.swift; sourceTree = "<group>"; };
+		856B7D6725C87245009C69A0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDepthViewController.swift; sourceTree = "<group>"; };
+		856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOpportunityViewController.swift; sourceTree = "<group>"; };
+		856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDepthViewController.swift; sourceTree = "<group>"; };
+		856B7D7125C91678009C69A0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -143,11 +157,12 @@
 			isa = PBXGroup;
 			children = (
 				85137B8425C1B15E002F8650 /* AppDelegate.swift */,
-				85137B8625C1B15E002F8650 /* SceneDelegate.swift */,
 				852B59EE25C37D2700B70621 /* DatabaseManager.swift */,
+				85137B8625C1B15E002F8650 /* SceneDelegate.swift */,
 				852B59F225C37DCE00B70621 /* StorageManager.swift */,
 				852B59F025C37D3000B70621 /* AuthManager.swift */,
 				856889C925C3911E009F88D5 /* Extensions.swift */,
+				856B7D7125C91678009C69A0 /* Post.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -176,6 +191,7 @@
 		852B59B625C31FBC00B70621 /* Main 5 */ = {
 			isa = PBXGroup;
 			children = (
+				856B7D6425C84FC0009C69A0 /* SubViewControllers */,
 				852B59B925C340F900B70621 /* TabBarViewController.swift */,
 				85137B8825C1B15E002F8650 /* HomeViewController.swift */,
 				8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */,
@@ -214,6 +230,19 @@
 				856B7D4225C7C0C5009C69A0 /* FullBlock.xib */,
 			);
 			path = OpportunityCollectionViews;
+			sourceTree = "<group>";
+		};
+		856B7D6425C84FC0009C69A0 /* SubViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */,
+				856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */,
+				856B7D6725C87245009C69A0 /* SettingsViewController.swift */,
+				856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */,
+				856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */,
+				856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */,
+			);
+			path = SubViewControllers;
 			sourceTree = "<group>";
 		};
 		8588A9D225C1B75D003CADDF /* Starting */ = {
@@ -375,21 +404,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */,
+				856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */,
 				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
 				852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
+				856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
 				85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */,
 				856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */,
+				856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */,
+				856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */,
+				856B7D7225C91679009C69A0 /* Post.swift in Sources */,
 				856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */,
 				85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */,
+				856B7D6C25C873EF009C69A0 /* CreateOpportunityViewController.swift in Sources */,
 				852B59B825C3400100B70621 /* MessageViewController.swift in Sources */,
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,
 				8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */,
 				8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */,
 				852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */,
 				856889CA25C3911E009F88D5 /* Extensions.swift in Sources */,
+				856B7D6825C87245009C69A0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
