@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseDatabase
+import Firebase
 import GoogleSignIn
 import FirebaseAuth
 
@@ -15,6 +16,8 @@ public class DatabaseManager {
     static let shared = DatabaseManager()
     
     private let database = Database.database().reference()
+    
+    //let timestamp = Firebase.timestamp
     
     //to check whether a user can be created or not
     public func canCreateNewUser(with email: String, username: String, completion: (Bool) -> Void){
@@ -30,10 +33,14 @@ public class DatabaseManager {
                 let username = dictionary["username"] as! String
                 let firstName = dictionary["firstName"] as! String
                 let lastName = dictionary["lastName"] as! String
+                let profilePicString = dictionary["profilePhoto"] as! String
+                let profilePicUrl = URL(string: profilePicString)
                 
-                DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: uid) { (success) in
+                DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: uid, userProfilePhotoUrl: profilePicUrl!) { (success) in
                     if success {
-                        print("success")
+                        let ref = self.database.child("users").child("googleid").ref
+                        
+                        ref.removeValue()
                     }
                     else {
                         
@@ -41,16 +48,16 @@ public class DatabaseManager {
                 }
             }
         }
-        
-        let ref = database.child("users").child("googleid").ref
-        
-        ref.removeValue()
+
     }
     
     
     //inserts a new user into the database
-    public func insertNewUser(with email: String, username: String, firstName: String, lastName: String, uid: String, completion: @escaping (Bool) -> Void){
-        database.child("users").child(uid).setValue(["firstName": firstName, "lastName": lastName, "email": email, "username": username]) { (error, _) in
+    public func insertNewUser(with email: String, username: String, firstName: String, lastName: String, uid: String, userProfilePhotoUrl: URL, completion: @escaping (Bool) -> Void){
+        
+        UserProfile.currentUserProfile = UserProfile(uid: uid ?? "no user id", username: username, firstName: firstName, lastName: lastName, headline: " ", profilePhotoURL: userProfilePhotoUrl)
+        database.child("users").child(uid).setValue(["firstName": firstName, "lastName": lastName, "email": email, "username": username, "headline": " ",
+                                                     "profilePhoto": userProfilePhotoUrl.absoluteString]) { (error, _) in
             if error == nil {
                 completion(true)
                 return
@@ -62,10 +69,55 @@ public class DatabaseManager {
         }
     }
     
-    public func addAPost(type: String, title: String, isAnonymous: Bool, content: String, user: String, completion: @escaping (Bool) -> Void){
+    public func addAPost(newPost: PostWithUIImage, completion: @escaping (Bool) -> Void){
+        
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        
+        StorageManager.shared.uploadPostImage(image: newPost.image, withAutoId: postRef.key!) { (url) in
+            let postObject = ["author": [
+                                    "uid": newPost.author.uid,
+                                    "username": newPost.author.username,
+                                    "firstName": newPost.author.firstName,
+                                    "lastName": newPost.author.lastName,
+                                    "profilePicURL": newPost.author.profilePhotoURL.absoluteString
+                                        ],
+                              "mainTitle": newPost.title,
+                              "content": newPost.content,
+                              "type": newPost.type,
+                              "imageurl": url?.absoluteString,
+                              "timestamp": [".sv":"timestamp"]
+            ] as [String:Any]
+            
+            postRef.setValue(postObject)
+        }
         
     }
     
+    public func observeUserProfile(_ uid: String, completion: @escaping ((_ userProfile: UserProfile?) -> ())) {
+        let userRef = database.child("users/\(uid)")
+        
+        userRef.observe(.value, with: { snapshot in
+            var userProfile: UserProfile?
+            
+            if let dict = snapshot.value as? [String: Any],
+               let username = dict["username"] as? String,
+               let firstName = dict["firstName"] as? String,
+               let lastName = dict["lastName"] as? String,
+               let headline = dict["headline"] as? String,
+               let profilePhotoURL = dict["profilePhoto"] as? String,
+               let url = URL(string: profilePhotoURL)
+            {
+                
+                userProfile = UserProfile(uid: uid, username: username, firstName: firstName, lastName: lastName, headline: headline, profilePhotoURL: url)
+            }
+            
+            completion(userProfile)
+        })
+    }
+
+    /*public func getPostData() -> Post {
+        
+    }*/
     //insert posst (discussion, question, fun, other)
     
 }

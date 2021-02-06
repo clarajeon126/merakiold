@@ -55,10 +55,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let lastName = user.profile.familyName ?? "lastName"
             let email = user.profile.email ?? "email@gmail.com"
             
-            DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid") { (success) in
-                if success {
-                }
-                else {
+            let defaultProfilePhoto = #imageLiteral(resourceName: "blankprofilepic")
+            
+            StorageManager.shared.uploadProfileImage(defaultProfilePhoto) { (url) in
+                
+                if url != nil {
+                    DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid", userProfilePhotoUrl: url!) { (success) in
+                        if success {
+                            
+                        }
+                        else {
+                            
+                        }
+                    }
                 }
             }
             

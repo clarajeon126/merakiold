@@ -16,6 +16,7 @@
 		85137B8E25C1B15F002F8650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85137B8D25C1B15F002F8650 /* Assets.xcassets */; };
 		85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85137B8F25C1B15F002F8650 /* LaunchScreen.storyboard */; };
 		85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B9D25C1B62E002F8650 /* ProfileViewController.swift */; };
+		8521C47025CF03D300510404 /* PostWithUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8521C46F25CF03D300510404 /* PostWithUIImage.swift */; };
 		852B59B825C3400100B70621 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B725C3400100B70621 /* MessageViewController.swift */; };
 		852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B925C340F900B70621 /* TabBarViewController.swift */; };
 		852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852B59D825C3623A00B70621 /* GoogleService-Info.plist */; };
@@ -39,10 +40,15 @@
 		856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */; };
 		856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */; };
 		856B7D7225C91679009C69A0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D7125C91678009C69A0 /* Post.swift */; };
+		857F363025CE578D00AA9BD3 /* ImageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F362F25CE578D00AA9BD3 /* ImageServices.swift */; };
 		8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */; };
 		8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C925C1B70B003CADDF /* LoginViewController.swift */; };
 		8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CC25C1B715003CADDF /* RegisterViewController.swift */; };
 		8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */; };
+		859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745225CCB6020002DDC5 /* PostTableViewCell.swift */; };
+		859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859C745325CCB6020002DDC5 /* PostTableViewCell.xib */; };
+		859C745725CCB9A50002DDC5 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745625CCB9A50002DDC5 /* PostTableCell.swift */; };
+		859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C746325CCE58A0002DDC5 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +75,7 @@
 		85137B9025C1B15F002F8650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85137B9225C1B15F002F8650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85137B9D25C1B62E002F8650 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8521C46F25CF03D300510404 /* PostWithUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithUIImage.swift; sourceTree = "<group>"; };
 		852B59B725C3400100B70621 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		852B59B925C340F900B70621 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		852B59D825C3623A00B70621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,10 +99,15 @@
 		856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDepthViewController.swift; sourceTree = "<group>"; };
 		856B7D7125C91678009C69A0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		857F362F25CE578D00AA9BD3 /* ImageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServices.swift; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		8588A9C925C1B70B003CADDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8588A9CC25C1B715003CADDF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewController.swift; sourceTree = "<group>"; };
+		859C745225CCB6020002DDC5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		859C745325CCB6020002DDC5 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		859C745625CCB9A50002DDC5 /* PostTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
+		859C746325CCE58A0002DDC5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.debug.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.debug.xcconfig"; sourceTree = "<group>"; };
 		A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meraki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61CEA9E6D07259397927894 /* Pods-Meraki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.release.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +157,7 @@
 			children = (
 				85137B9225C1B15F002F8650 /* Info.plist */,
 				852B59D825C3623A00B70621 /* GoogleService-Info.plist */,
+				859C746225CCE56C0002DDC5 /* Models */,
 				85137B9925C1B551002F8650 /* Resources */,
 				85137B9C25C1B582002F8650 /* Storyboards */,
 				853A7B7225C2642800DF2143 /* Roboto */,
@@ -162,7 +175,7 @@
 				852B59F225C37DCE00B70621 /* StorageManager.swift */,
 				852B59F025C37D3000B70621 /* AuthManager.swift */,
 				856889C925C3911E009F88D5 /* Extensions.swift */,
-				856B7D7125C91678009C69A0 /* Post.swift */,
+				857F363125CE579500AA9BD3 /* Services */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -219,6 +232,9 @@
 			children = (
 				856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */,
 				856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */,
+				859C745225CCB6020002DDC5 /* PostTableViewCell.swift */,
+				859C745325CCB6020002DDC5 /* PostTableViewCell.xib */,
+				859C745625CCB9A50002DDC5 /* PostTableCell.swift */,
 			);
 			path = "Custom Cells, Views, etc";
 			sourceTree = "<group>";
@@ -245,6 +261,14 @@
 			path = SubViewControllers;
 			sourceTree = "<group>";
 		};
+		857F363125CE579500AA9BD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				857F362F25CE578D00AA9BD3 /* ImageServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		8588A9D225C1B75D003CADDF /* Starting */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +276,16 @@
 				8588A9CC25C1B715003CADDF /* RegisterViewController.swift */,
 			);
 			path = Starting;
+			sourceTree = "<group>";
+		};
+		859C746225CCE56C0002DDC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				856B7D7125C91678009C69A0 /* Post.swift */,
+				859C746325CCE58A0002DDC5 /* UserProfile.swift */,
+				8521C46F25CF03D300510404 /* PostWithUIImage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D08D012B343676C7D826FB29 /* Frameworks */ = {
@@ -326,6 +360,7 @@
 				853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */,
 				853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */,
 				852B59DB25C3647200B70621 /* Starting.storyboard in Resources */,
+				859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */,
 				852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */,
 				853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */,
 				853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */,
@@ -404,16 +439,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */,
+				857F363025CE578D00AA9BD3 /* ImageServices.swift in Sources */,
 				856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */,
 				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
 				852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
+				859C745725CCB9A50002DDC5 /* PostTableCell.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
 				856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
 				85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */,
 				856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */,
 				856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */,
+				859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */,
+				859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */,
 				856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */,
 				856B7D7225C91679009C69A0 /* Post.swift in Sources */,
 				856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */,
@@ -426,6 +465,7 @@
 				852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */,
 				856889CA25C3911E009F88D5 /* Extensions.swift in Sources */,
 				856B7D6825C87245009C69A0 /* SettingsViewController.swift in Sources */,
+				8521C47025CF03D300510404 /* PostWithUIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

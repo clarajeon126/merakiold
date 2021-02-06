@@ -14,7 +14,7 @@ public class AuthManager {
     static let shared = AuthManager()
     
     //get user id (mostly for google sign in and stuff)
-    public func getUserId() -> String{
+    public func getUserId() -> String?{
         guard let uid = Auth.auth().currentUser?.uid else {
             return "not signed in"
         }
@@ -23,22 +23,34 @@ public class AuthManager {
     
     //to register new user
     public func registerNewUser(username: String, email: String, password: String, firstName: String, lastName: String, completion: @escaping (Bool) -> Void){
+        
+        //check if there are no duplicates
         DatabaseManager.shared.canCreateNewUser(with: email, username: username){ canCreate in
             if canCreate {
+                
+                //create user
                 Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                     guard error == nil, result != nil else{
                         completion(false)
                         return
                 }
-                    //into database
-                    DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: self.getUserId()) { (inserted) in
-                        if inserted {
-                            completion(true)
-                            return
-                        }
-                        else {
-                            completion(false)
-                            return
+                    
+                let defaultProfilePhoto = #imageLiteral(resourceName: "blankprofilepic")
+                    
+                    StorageManager.shared.uploadProfileImage(defaultProfilePhoto) { (url) in
+                        if url != nil {
+                            DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: self.getUserId() ?? "no user id", userProfilePhotoUrl: url!) { (inserted) in
+                                if inserted {
+                                    //creating user profile
+                                    UserProfile.currentUserProfile = UserProfile(uid: self.getUserId() ?? "no user id", username: username, firstName: firstName, lastName: lastName, headline: " ", profilePhotoURL: url!)
+                                    completion(true)
+                                    return
+                                }
+                                else {
+                                    completion(false)
+                                    return
+                                }
+                            }
                         }
                     }
                 }
