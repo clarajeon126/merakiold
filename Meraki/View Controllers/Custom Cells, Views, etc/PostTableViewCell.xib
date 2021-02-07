@@ -29,32 +29,32 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIb-73-CRf">
-                        <rect key="frame" x="52" y="10" width="42" height="12"/>
-                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator of Meraki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-R9-VnE">
-                        <rect key="frame" x="57" y="25" width="53" height="9"/>
-                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="7"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to start iOS Development?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3Y-Fn-cNK">
-                        <rect key="frame" x="10" y="52" width="205" height="18"/>
+                        <rect key="frame" x="52" y="10" width="62" height="18"/>
                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bab-0Z-ngo">
-                        <rect key="frame" x="10" y="75" width="300" height="59"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator of Meraki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-R9-VnE">
+                        <rect key="frame" x="57" y="31" width="91" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to start iOS Development?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3Y-Fn-cNK">
+                        <rect key="frame" x="10" y="52" width="300" height="23.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bab-0Z-ngo">
+                        <rect key="frame" x="10" y="80.5" width="300" height="80"/>
                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="10"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="92g-Cq-COC">
-                        <rect key="frame" x="16" y="139" width="288" height="212"/>
+                        <rect key="frame" x="16" y="165.5" width="288" height="185.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -66,6 +66,7 @@
                     <constraint firstAttribute="trailing" secondItem="bab-0Z-ngo" secondAttribute="trailing" constant="10" id="XZ3-tv-psD"/>
                     <constraint firstItem="NCO-yW-nwo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XrI-em-X99"/>
                     <constraint firstItem="zaR-R9-VnE" firstAttribute="top" secondItem="mIb-73-CRf" secondAttribute="bottom" constant="3" id="ZGt-JS-NN0"/>
+                    <constraint firstAttribute="trailing" secondItem="v3Y-Fn-cNK" secondAttribute="trailing" constant="10" id="dgc-q0-Qwv"/>
                     <constraint firstItem="NCO-yW-nwo" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.1" id="dns-8n-HZu"/>
                     <constraint firstItem="v3Y-Fn-cNK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gpn-Ya-3cA"/>
                     <constraint firstItem="92g-Cq-COC" firstAttribute="top" secondItem="bab-0Z-ngo" secondAttribute="bottom" constant="5" id="olg-BF-1RR"/>

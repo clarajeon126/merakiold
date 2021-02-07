@@ -17,8 +17,6 @@ public class DatabaseManager {
     
     private let database = Database.database().reference()
     
-    //let timestamp = Firebase.timestamp
-    
     //to check whether a user can be created or not
     public func canCreateNewUser(with email: String, username: String, completion: (Bool) -> Void){
         completion(true)
@@ -67,30 +65,6 @@ public class DatabaseManager {
                 return
             }
         }
-    }
-    
-    public func addAPost(newPost: PostWithUIImage, completion: @escaping (Bool) -> Void){
-        
-        let postRef = Database.database().reference().child("posts").childByAutoId()
-        
-        StorageManager.shared.uploadPostImage(image: newPost.image, withAutoId: postRef.key!) { (url) in
-            let postObject = ["author": [
-                                    "uid": newPost.author.uid,
-                                    "username": newPost.author.username,
-                                    "firstName": newPost.author.firstName,
-                                    "lastName": newPost.author.lastName,
-                                    "profilePicURL": newPost.author.profilePhotoURL.absoluteString
-                                        ],
-                              "mainTitle": newPost.title,
-                              "content": newPost.content,
-                              "type": newPost.type,
-                              "imageurl": url?.absoluteString,
-                              "timestamp": [".sv":"timestamp"]
-            ] as [String:Any]
-            
-            postRef.setValue(postObject)
-        }
-        
     }
     
     public func observeUserProfile(_ uid: String, completion: @escaping ((_ userProfile: UserProfile?) -> ())) {

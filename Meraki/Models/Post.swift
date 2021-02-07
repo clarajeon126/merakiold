@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 public class Post {
+    var id: String
     var type: String
     var title: String
     var isAnonymous: Bool
@@ -16,7 +17,8 @@ public class Post {
     var author: UserProfile
     var createdAt: Date
     
-    init(type: String, title: String, isAnonymous: Bool, image: URL, content: String, author: UserProfile, timestamp:Double){
+    init(id: String, type: String, title: String, isAnonymous: Bool, image: URL, content: String, author: UserProfile, timestamp:Double){
+        self.id = id
         self.type = type
         self.title = title
         self.isAnonymous = isAnonymous
@@ -28,27 +30,28 @@ public class Post {
     
     static func parse(_ key:String, _ data:[String:Any]) -> Post? {
         
+        print("before if parsing")
+        print(data)
         if let author = data["author"] as? [String:Any],
-            let uid = author["uid"] as? String,
-            let username = author["username"] as? String,
-            let headline = author["headline"] as? String,
-            let firstName = author["firstName"] as? String,
-            let lastName = author["lastName"] as? String,
-            let profilePhotoURL = author["profilePhotoURL"] as? String,
-            let url = URL(string:profilePhotoURL),
-            let type = data["type"] as? String,
-            let isAnonymous = data["isAnonymous"] as? Bool,
-            let mainTitle = data["title"] as? String,
-            let content = data["content"] as? String,
-            let postImage = author["postImage"] as? String,
-            let urlPostImage = URL(string:postImage),
-            let timestamp = data["timestamp"] as? Double {
-            
+           let uid = author["uid"] as? String,
+           let username = author["username"] as? String,
+           let headline = author["headline"] as? String,
+           let firstName = author["firstName"] as? String,
+           let lastName = author["lastName"] as? String,
+           let profilePhotoURL = author["profilePicURL"] as? String,
+              let url = URL(string:profilePhotoURL),
+              let type = data["type"] as? String,
+              let isAnonymous = data["isAnonymous"] as? Bool,
+              let mainTitle = data["mainTitle"] as? String,
+              let content = data["content"] as? String,
+              let postImage = data["imageurl"] as? String,
+                 let urlPostImage = URL(string:postImage),
+                 let timestamp = data["timestamp"] as? Double{
+            print("parsing")
             let userProfile = UserProfile(uid: uid, username: username, firstName: firstName, lastName: lastName, headline: headline, profilePhotoURL: url)
             
-            return Post(type: type, title: mainTitle, isAnonymous: isAnonymous, image: urlPostImage, content: content, author: userProfile, timestamp: timestamp)
-            
-        }
+            return Post(id: key, type: type, title: mainTitle, isAnonymous: isAnonymous, image: urlPostImage, content: content, author: userProfile, timestamp: timestamp)
+            }
         
         return nil
     }

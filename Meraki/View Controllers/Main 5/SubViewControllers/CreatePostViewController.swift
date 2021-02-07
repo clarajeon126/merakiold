@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
+protocol NewPostVCDelegate {
+    func didUploadPost(withID id:String)
+}
 class CreatePostViewController: UIViewController {
     
+    var delegate:NewPostVCDelegate?
     var typeOfPost = "not chosen yet"
     var selectedTypeButton: UIButton? = nil
     
@@ -97,7 +102,7 @@ class CreatePostViewController: UIViewController {
         }
         let newPost = PostWithUIImage(typeOfPost: typeOfPost, titleOfPost: titleText, isAnonymous: false, imageUI: imageForPost, contentOfPost: contentText, author: UserProfile.currentUserProfile!)
         
-            DatabaseManager.shared.addAPost(newPost: newPost) { (success) in
+            addAPost(newPost: newPost) { (success) in
                 if success {
                 }
                 else {
@@ -127,6 +132,41 @@ class CreatePostViewController: UIViewController {
     }
     
 
+    public func addAPost(newPost: PostWithUIImage, completion: @escaping (Bool) -> Void){
+        
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        
+        StorageManager.shared.uploadPostImage(image: newPost.image, withAutoId: postRef.key!) { (url) in
+            if url != nil {
+                let imageURL = url!
+                let postObject = ["author": [
+                                        "uid": newPost.author.uid,
+                                        "username": newPost.author.username,
+                                        "firstName": newPost.author.firstName,
+                                        "lastName": newPost.author.lastName,
+                                        "headline": " ",
+                                        "profilePicURL": newPost.author.profilePhotoURL.absoluteString
+                                            ],
+                                  "mainTitle": newPost.title,
+                                  "content": newPost.content,
+                                  "type": newPost.type,
+                                  "imageurl": imageURL.absoluteString,
+                                  "isAnonymous": false,
+                                  "timestamp": [".sv":"timestamp"]
+                ] as [String:Any]
+
+                postRef.setValue(postObject) { (error, ref) in
+                    if error == nil {
+                        self.delegate?.didUploadPost(withID: ref.key!)
+                    } else {
+                        // Handle the error
+                    }
+                }
+            }
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
