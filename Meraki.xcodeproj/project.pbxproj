@@ -48,7 +48,6 @@
 		8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */; };
 		859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745225CCB6020002DDC5 /* PostTableViewCell.swift */; };
 		859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859C745325CCB6020002DDC5 /* PostTableViewCell.xib */; };
-		859C745725CCB9A50002DDC5 /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745625CCB9A50002DDC5 /* PostTableCell.swift */; };
 		859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C746325CCE58A0002DDC5 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +107,6 @@
 		8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewController.swift; sourceTree = "<group>"; };
 		859C745225CCB6020002DDC5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		859C745325CCB6020002DDC5 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		859C745625CCB9A50002DDC5 /* PostTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
 		859C746325CCE58A0002DDC5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.debug.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.debug.xcconfig"; sourceTree = "<group>"; };
 		A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meraki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +234,6 @@
 				856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */,
 				859C745225CCB6020002DDC5 /* PostTableViewCell.swift */,
 				859C745325CCB6020002DDC5 /* PostTableViewCell.xib */,
-				859C745625CCB9A50002DDC5 /* PostTableCell.swift */,
 				8521C50225CF604A00510404 /* LoadingCell.swift */,
 			);
 			path = "Custom Cells, Views, etc";
@@ -447,7 +444,6 @@
 				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
 				852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
-				859C745725CCB9A50002DDC5 /* PostTableCell.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
 				856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,

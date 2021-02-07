@@ -56,8 +56,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let userName = UserProfile.currentUserProfile?.firstName ?? "yourself"
-        introductionLabel.text = "Meraki: to put something of " + userName + " into your work"
         postTableView.register(UINib.init(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: postTableCellId)
         postTableView.register(LoadingCell.self, forCellReuseIdentifier: "loadingCell")
         
@@ -83,6 +81,9 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         handleNotAuthenticated()
+        
+        let userName = UserProfile.currentUserProfile?.firstName ?? "yourself"
+        introductionLabel.text = "Meraki: to put something of " + userName + " into your work"
         
         listenForNewPosts()
     }

@@ -88,6 +88,12 @@ public class DatabaseManager {
             completion(userProfile)
         })
     }
+    
+    public func queryOneUsersPost(uid: String){
+        var userQuery: DatabaseQuery {
+            
+        }
+    }
 
     /*public func getPostData() -> Post {
         

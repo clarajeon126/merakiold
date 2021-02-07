@@ -180,7 +180,46 @@
                                     <segment title="About"/>
                                     <segment title="Posts"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControllerChanged:" destination="bno-e9-bzF" eventType="valueChanged" id="Tm8-ZM-qc8"/>
+                                </connections>
                             </segmentedControl>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPn-HP-TlO">
+                                <rect key="frame" x="0.0" y="313" width="414" height="500"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SO5-ka-OmR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SO5-ka-OmR" firstAttribute="top" secondItem="tPn-HP-TlO" secondAttribute="top" id="3Kz-IN-qHO"/>
+                                    <constraint firstItem="SO5-ka-OmR" firstAttribute="leading" secondItem="tPn-HP-TlO" secondAttribute="leading" id="aSE-RG-VHb"/>
+                                    <constraint firstAttribute="trailing" secondItem="SO5-ka-OmR" secondAttribute="trailing" id="m9a-GU-ASy"/>
+                                    <constraint firstAttribute="bottom" secondItem="SO5-ka-OmR" secondAttribute="bottom" id="xbH-gB-tzE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk8-sV-dJL">
+                                <rect key="frame" x="0.0" y="313" width="414" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="juX-Fa-vQ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Meraki Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtx-60-Tgt">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="juX-Fa-vQ0" firstAttribute="leading" secondItem="rk8-sV-dJL" secondAttribute="leading" id="rCU-46-qI3"/>
+                                    <constraint firstAttribute="trailing" secondItem="juX-Fa-vQ0" secondAttribute="trailing" id="w2o-db-d50"/>
+                                    <constraint firstItem="juX-Fa-vQ0" firstAttribute="top" secondItem="rk8-sV-dJL" secondAttribute="top" id="wj5-jK-yTD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TCE-b4-amo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -191,9 +230,17 @@
                             <constraint firstItem="EGJ-nD-J8j" firstAttribute="width" secondItem="BCc-63-KTX" secondAttribute="width" multiplier="0.3" id="8QK-jb-S7W"/>
                             <constraint firstItem="yyX-cU-DZh" firstAttribute="top" secondItem="TCE-b4-amo" secondAttribute="top" constant="30" id="8k9-oY-f7C"/>
                             <constraint firstItem="wRm-UQ-gSP" firstAttribute="centerX" secondItem="BCc-63-KTX" secondAttribute="centerX" id="ETF-qd-xv1"/>
+                            <constraint firstItem="tPn-HP-TlO" firstAttribute="height" secondItem="rk8-sV-dJL" secondAttribute="height" id="M4c-iM-GKW"/>
+                            <constraint firstItem="TCE-b4-amo" firstAttribute="bottom" secondItem="rk8-sV-dJL" secondAttribute="bottom" id="NDY-lU-YtY"/>
+                            <constraint firstItem="TCE-b4-amo" firstAttribute="trailing" secondItem="tPn-HP-TlO" secondAttribute="trailing" id="QOK-ZL-Hme"/>
                             <constraint firstItem="TCE-b4-amo" firstAttribute="trailing" secondItem="wRm-UQ-gSP" secondAttribute="trailing" constant="20" id="QkV-7D-4cp"/>
+                            <constraint firstItem="rk8-sV-dJL" firstAttribute="top" secondItem="wRm-UQ-gSP" secondAttribute="bottom" constant="20" id="Wna-Bm-h3i"/>
+                            <constraint firstItem="TCE-b4-amo" firstAttribute="bottom" secondItem="tPn-HP-TlO" secondAttribute="bottom" id="iXz-cj-yXy"/>
                             <constraint firstItem="wRm-UQ-gSP" firstAttribute="leading" secondItem="TCE-b4-amo" secondAttribute="leading" constant="20" id="l3x-Sw-kFg"/>
                             <constraint firstItem="wRm-UQ-gSP" firstAttribute="top" secondItem="EGJ-nD-J8j" secondAttribute="bottom" constant="20" id="pvx-5p-HGt"/>
+                            <constraint firstItem="TCE-b4-amo" firstAttribute="trailing" secondItem="rk8-sV-dJL" secondAttribute="trailing" id="rKK-um-9r8"/>
+                            <constraint firstItem="tPn-HP-TlO" firstAttribute="leading" secondItem="TCE-b4-amo" secondAttribute="leading" id="ryJ-oP-r77"/>
+                            <constraint firstItem="rk8-sV-dJL" firstAttribute="leading" secondItem="TCE-b4-amo" secondAttribute="leading" id="vIr-Nn-gMp"/>
                             <constraint firstItem="EGJ-nD-J8j" firstAttribute="top" secondItem="TCE-b4-amo" secondAttribute="top" constant="30" id="xHO-k4-y2x"/>
                         </constraints>
                     </view>
@@ -205,6 +252,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="aboutView" destination="rk8-sV-dJL" id="27P-wz-ghY"/>
+                        <outlet property="myPostTableView" destination="SO5-ka-OmR" id="V4p-M2-wey"/>
+                        <outlet property="postsView" destination="tPn-HP-TlO" id="6fS-Pj-JOv"/>
+                        <outlet property="profileImage" destination="EGJ-nD-J8j" id="iwG-37-8I2"/>
+                        <outlet property="userHeadlineLabel" destination="cjZ-PD-LIk" id="DYp-1T-QMw"/>
+                        <outlet property="userName" destination="RNi-XD-YsN" id="ksx-hE-wbV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXE-je-HTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9j-LD-kfS">
-                                <rect key="frame" x="135" y="288" width="60" height="30"/>
+                                <rect key="frame" x="137" y="324" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
