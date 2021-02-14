@@ -30,6 +30,12 @@
 		853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */; };
 		853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7B25C2642800DF2143 /* LICENSE.txt */; };
 		853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */; };
+		853B7E0D25D9B44E006E79EB /* AboutUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B7E0C25D9B44E006E79EB /* AboutUser.swift */; };
+		8554391D25D71ED900004FC3 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554391C25D71ED900004FC3 /* HelperExtensions.swift */; };
+		8554392825D74B9400004FC3 /* AboutUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554392625D74B9400004FC3 /* AboutUserTableViewCell.swift */; };
+		8554392925D74B9400004FC3 /* AboutUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8554392725D74B9400004FC3 /* AboutUserTableViewCell.xib */; };
+		8554392D25D75BE400004FC3 /* EditBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554392C25D75BE400004FC3 /* EditBasicViewController.swift */; };
+		8554392F25D75BF600004FC3 /* EditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554392E25D75BF600004FC3 /* EditAboutViewController.swift */; };
 		856889CA25C3911E009F88D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856889C925C3911E009F88D5 /* Extensions.swift */; };
 		856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */; };
 		856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */; };
@@ -49,6 +55,11 @@
 		859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745225CCB6020002DDC5 /* PostTableViewCell.swift */; };
 		859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859C745325CCB6020002DDC5 /* PostTableViewCell.xib */; };
 		859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C746325CCE58A0002DDC5 /* UserProfile.swift */; };
+		85D63EAF25D4F512002960FA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D63EAE25D4F512002960FA /* Comment.swift */; };
+		85D63EB725D4F8F2002960FA /* SelfCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D63EB525D4F8F2002960FA /* SelfCommentTableViewCell.swift */; };
+		85D63EB825D4F8F2002960FA /* SelfCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D63EB625D4F8F2002960FA /* SelfCommentTableViewCell.xib */; };
+		85EB3CF725D4DAFD007A4C2C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */; };
+		85EB3CF825D4DAFD007A4C2C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +100,12 @@
 		853A7B7525C2642800DF2143 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		853A7B7B25C2642800DF2143 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		853A7B7E25C2642800DF2143 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		853B7E0C25D9B44E006E79EB /* AboutUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUser.swift; sourceTree = "<group>"; };
+		8554391C25D71ED900004FC3 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		8554392625D74B9400004FC3 /* AboutUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserTableViewCell.swift; sourceTree = "<group>"; };
+		8554392725D74B9400004FC3 /* AboutUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUserTableViewCell.xib; sourceTree = "<group>"; };
+		8554392C25D75BE400004FC3 /* EditBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasicViewController.swift; sourceTree = "<group>"; };
+		8554392E25D75BF600004FC3 /* EditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewController.swift; sourceTree = "<group>"; };
 		856889C925C3911E009F88D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpportunityCollectionViewCell.swift; path = "Meraki/View Controllers/Custom Cells, Views, etc/OpportunityCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBlockCustomView.swift; sourceTree = "<group>"; };
@@ -108,6 +125,11 @@
 		859C745225CCB6020002DDC5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		859C745325CCB6020002DDC5 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		859C746325CCE58A0002DDC5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		85D63EAE25D4F512002960FA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		85D63EB525D4F8F2002960FA /* SelfCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCommentTableViewCell.swift; sourceTree = "<group>"; };
+		85D63EB625D4F8F2002960FA /* SelfCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfCommentTableViewCell.xib; sourceTree = "<group>"; };
+		85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.debug.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.debug.xcconfig"; sourceTree = "<group>"; };
 		A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meraki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61CEA9E6D07259397927894 /* Pods-Meraki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.release.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,8 +182,8 @@
 				859C746225CCE56C0002DDC5 /* Models */,
 				85137B9925C1B551002F8650 /* Resources */,
 				85137B9C25C1B582002F8650 /* Storyboards */,
-				853A7B7225C2642800DF2143 /* Roboto */,
 				85137B9A25C1B557002F8650 /* View Controllers */,
+				853A7B7225C2642800DF2143 /* Roboto */,
 			);
 			path = Meraki;
 			sourceTree = "<group>";
@@ -175,6 +197,7 @@
 				852B59F225C37DCE00B70621 /* StorageManager.swift */,
 				852B59F025C37D3000B70621 /* AuthManager.swift */,
 				856889C925C3911E009F88D5 /* Extensions.swift */,
+				8554391C25D71ED900004FC3 /* HelperExtensions.swift */,
 				857F363125CE579500AA9BD3 /* Services */,
 			);
 			path = Resources;
@@ -227,14 +250,33 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
+		8554392A25D74B9800004FC3 /* About User Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8554392625D74B9400004FC3 /* AboutUserTableViewCell.swift */,
+				8554392725D74B9400004FC3 /* AboutUserTableViewCell.xib */,
+			);
+			path = "About User Cell";
+			sourceTree = "<group>";
+		};
+		8554392B25D75BC600004FC3 /* Setting View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8554392C25D75BE400004FC3 /* EditBasicViewController.swift */,
+				8554392E25D75BF600004FC3 /* EditAboutViewController.swift */,
+			);
+			path = "Setting View Controllers";
+			sourceTree = "<group>";
+		};
 		856B7D3625C7BFBF009C69A0 /* Custom Cells, Views, etc */ = {
 			isa = PBXGroup;
 			children = (
 				856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */,
 				856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */,
-				859C745225CCB6020002DDC5 /* PostTableViewCell.swift */,
-				859C745325CCB6020002DDC5 /* PostTableViewCell.xib */,
-				8521C50225CF604A00510404 /* LoadingCell.swift */,
+				85D63EB125D4F887002960FA /* Post Cell */,
+				85D63EB225D4F89C002960FA /* Self Comment Cell */,
+				85D63EB025D4F869002960FA /* Comment Cell */,
+				8554392A25D74B9800004FC3 /* About User Cell */,
 			);
 			path = "Custom Cells, Views, etc";
 			sourceTree = "<group>";
@@ -251,6 +293,7 @@
 		856B7D6425C84FC0009C69A0 /* SubViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8554392B25D75BC600004FC3 /* Setting View Controllers */,
 				856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */,
 				856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */,
 				856B7D6725C87245009C69A0 /* SettingsViewController.swift */,
@@ -282,10 +325,40 @@
 			isa = PBXGroup;
 			children = (
 				856B7D7125C91678009C69A0 /* Post.swift */,
+				85D63EAE25D4F512002960FA /* Comment.swift */,
 				859C746325CCE58A0002DDC5 /* UserProfile.swift */,
 				8521C46F25CF03D300510404 /* PostWithUIImage.swift */,
+				853B7E0C25D9B44E006E79EB /* AboutUser.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		85D63EB025D4F869002960FA /* Comment Cell */ = {
+			isa = PBXGroup;
+			children = (
+				85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */,
+				85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */,
+			);
+			name = "Comment Cell";
+			sourceTree = "<group>";
+		};
+		85D63EB125D4F887002960FA /* Post Cell */ = {
+			isa = PBXGroup;
+			children = (
+				859C745225CCB6020002DDC5 /* PostTableViewCell.swift */,
+				859C745325CCB6020002DDC5 /* PostTableViewCell.xib */,
+				8521C50225CF604A00510404 /* LoadingCell.swift */,
+			);
+			path = "Post Cell";
+			sourceTree = "<group>";
+		};
+		85D63EB225D4F89C002960FA /* Self Comment Cell */ = {
+			isa = PBXGroup;
+			children = (
+				85D63EB525D4F8F2002960FA /* SelfCommentTableViewCell.swift */,
+				85D63EB625D4F8F2002960FA /* SelfCommentTableViewCell.xib */,
+			);
+			name = "Self Comment Cell";
 			sourceTree = "<group>";
 		};
 		D08D012B343676C7D826FB29 /* Frameworks */ = {
@@ -361,12 +434,15 @@
 				853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */,
 				852B59DB25C3647200B70621 /* Starting.storyboard in Resources */,
 				859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */,
+				85EB3CF825D4DAFD007A4C2C /* CommentTableViewCell.xib in Resources */,
 				852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */,
 				853A7B8225C2642800DF2143 /* Roboto-Regular.ttf in Resources */,
 				853A7B8825C2642800DF2143 /* LICENSE.txt in Resources */,
 				853A7B8125C2642800DF2143 /* Roboto-Light.ttf in Resources */,
+				85D63EB825D4F8F2002960FA /* SelfCommentTableViewCell.xib in Resources */,
 				85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */,
 				85137B8E25C1B15F002F8650 /* Assets.xcassets in Resources */,
+				8554392925D74B9400004FC3 /* AboutUserTableViewCell.xib in Resources */,
 				856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */,
 				85137B8C25C1B15E002F8650 /* Main.storyboard in Resources */,
 			);
@@ -439,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8588A9CA25C1B70B003CADDF /* LoginViewController.swift in Sources */,
+				8554391D25D71ED900004FC3 /* HelperExtensions.swift in Sources */,
 				857F363025CE578D00AA9BD3 /* ImageServices.swift in Sources */,
 				856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */,
 				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
@@ -452,16 +529,23 @@
 				856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */,
 				859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */,
 				859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */,
+				8554392D25D75BE400004FC3 /* EditBasicViewController.swift in Sources */,
+				8554392F25D75BF600004FC3 /* EditAboutViewController.swift in Sources */,
 				856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */,
+				85D63EB725D4F8F2002960FA /* SelfCommentTableViewCell.swift in Sources */,
 				856B7D7225C91679009C69A0 /* Post.swift in Sources */,
 				8521C50325CF604A00510404 /* LoadingCell.swift in Sources */,
 				856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */,
 				85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */,
+				853B7E0D25D9B44E006E79EB /* AboutUser.swift in Sources */,
 				856B7D6C25C873EF009C69A0 /* CreateOpportunityViewController.swift in Sources */,
+				85EB3CF725D4DAFD007A4C2C /* CommentTableViewCell.swift in Sources */,
 				852B59B825C3400100B70621 /* MessageViewController.swift in Sources */,
+				8554392825D74B9400004FC3 /* AboutUserTableViewCell.swift in Sources */,
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,
 				8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */,
 				8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */,
+				85D63EAF25D4F512002960FA /* Comment.swift in Sources */,
 				852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */,
 				856889CA25C3911E009F88D5 /* Extensions.swift in Sources */,
 				856B7D6825C87245009C69A0 /* SettingsViewController.swift in Sources */,

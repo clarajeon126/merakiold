@@ -166,7 +166,7 @@
         <!--View Controller-->
         <scene sceneID="Vmv-8g-ZaT">
             <objects>
-                <viewController id="Ail-b6-Oyg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="creditsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ail-b6-Oyg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJ9-sY-T5f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

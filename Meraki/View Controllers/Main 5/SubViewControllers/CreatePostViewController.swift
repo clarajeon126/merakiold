@@ -120,13 +120,13 @@ class CreatePostViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         titleTextField.returnKeyType = .next
-        titleTextField.autocorrectionType = .no
-        titleTextField.autocapitalizationType = .none
+        titleTextField.autocorrectionType = .yes
+        titleTextField.autocapitalizationType = .allCharacters
         titleTextField.delegate = self
         
         contentTextField.returnKeyType = .next
-        contentTextField.autocorrectionType = .no
-        contentTextField.autocapitalizationType = .none
+        contentTextField.autocorrectionType = .yes
+        contentTextField.autocapitalizationType = .allCharacters
         contentTextField.delegate = self
         
     }
@@ -139,14 +139,7 @@ class CreatePostViewController: UIViewController {
         StorageManager.shared.uploadPostImage(image: newPost.image, withAutoId: postRef.key!) { (url) in
             if url != nil {
                 let imageURL = url!
-                let postObject = ["author": [
-                                        "uid": newPost.author.uid,
-                                        "username": newPost.author.username,
-                                        "firstName": newPost.author.firstName,
-                                        "lastName": newPost.author.lastName,
-                                        "headline": " ",
-                                        "profilePicURL": newPost.author.profilePhotoURL.absoluteString
-                                            ],
+                let postObject = ["uid": newPost.author.uid,
                                   "mainTitle": newPost.title,
                                   "content": newPost.content,
                                   "type": newPost.type,

@@ -51,21 +51,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print("Error occurs when authenticate with Firebase: \(error.localizedDescription)")
             }
             
-            let firstName = user.profile.givenName ?? "firstName"
-            let lastName = user.profile.familyName ?? "lastName"
-            let email = user.profile.email ?? "email@gmail.com"
+            let isNewUser = authResult?.additionalUserInfo?.isNewUser
             
-            let defaultProfilePhoto = #imageLiteral(resourceName: "blankprofilepic")
-            
-            StorageManager.shared.uploadProfileImage(defaultProfilePhoto) { (url) in
+            if isNewUser ?? false {
+                let firstName = user.profile.givenName ?? "firstName"
+                let lastName = user.profile.familyName ?? "lastName"
+                let email = user.profile.email ?? "email@gmail.com"
+                let profilePhotoImage = GIDSignIn.sharedInstance()?.currentUser.profile.hasImage
                 
-                if url != nil {
-                    DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid", userProfilePhotoUrl: url!) { (success) in
-                        if success {
-                            
+                var profilePhotoUrl: URL?
+                
+                //when user has a google profile image
+                if (profilePhotoImage ?? false){
+                    let googleProfilePhotoUrl = GIDSignIn.sharedInstance()?.currentUser.profile.imageURL(withDimension: 400)?.absoluteString
+                    
+                    StorageManager.shared.uploadGoogleUrlProfilePhoto(googleProfilePhotoUrl!) { (url) in
+                        profilePhotoUrl = url
+                        DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid", userProfilePhotoUrl: url!) { (success) in
                         }
-                        else {
-                            
+                    }
+                }
+                else {
+                    let defaultProfilePhoto = #imageLiteral(resourceName: "blankprofilepic")
+                    
+                    StorageManager.shared.uploadGeneralProfilePhoto(defaultProfilePhoto) { (url) in
+                        profilePhotoUrl = url
+                        
+                        DatabaseManager.shared.insertNewUser(with: email, username: email, firstName: firstName, lastName: lastName, uid: "googleid", userProfilePhotoUrl: url!) { (success) in
                         }
                     }
                 }

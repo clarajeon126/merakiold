@@ -15,11 +15,13 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var titleOfPostLabel: UILabel!
     @IBOutlet weak var contentOfPostLabel: UILabel!
     @IBOutlet weak var imageOfContent: UIImageView!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
+        userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 1.5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,11 +38,7 @@ class PostTableViewCell: UITableViewCell {
         self.userProfileImage.image = nil
         ImageService.getImage(withURL: post.author.profilePhotoURL) { image, url in
             guard let _post = self.post else { return }
-            if _post.author.profilePhotoURL.absoluteString == url.absoluteString {
-                self.userProfileImage.image = image
-            } else {
-                print("Not the right image")
-            }
+            self.userProfileImage.image = image
             
         }
         
@@ -53,11 +51,18 @@ class PostTableViewCell: UITableViewCell {
                 print("Not the right Post Image")
             }
         }
+        self.commentCountLabel.text = "0 comments"
+        DatabaseManager.shared.getNumberOfCommentsOnPost(postId: post.id) { (numOfComments) in
+            print("num comments")
+            print(numOfComments)
+            self.commentCountLabel.text = "\(numOfComments) Comments"
+        }
         
         userNameLabel.text = post.author.firstName + " " + post.author.lastName
         userHeadlineLabel.text = post.author.headline
         titleOfPostLabel.text = post.title
         contentOfPostLabel.text = post.content
+        timeLabel.text = post.createdAt.calenderTimeSinceNow()
     }
     
 }

@@ -46,6 +46,7 @@ class HomeViewController: UIViewController {
         let firstPost = posts.first
         if firstPost != nil {
             let firstTimestamp = firstPost!.createdAt.timeIntervalSince1970 * 1000
+            print("in new post query")
             queryRef = postsRef.queryOrdered(byChild: "timestamp").queryStarting(atValue: firstTimestamp)
         } else {
             queryRef = postsRef.queryOrdered(byChild: "timestamp")
@@ -75,6 +76,7 @@ class HomeViewController: UIViewController {
         
         beginBatchFetch()
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool){
@@ -96,25 +98,26 @@ class HomeViewController: UIViewController {
             let firstPost = self.posts.first
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
-                    let data = childSnapshot.value as? [String:Any],
-                    let post = Post.parse(childSnapshot.key, data),
-                    childSnapshot.key != firstPost?.id {
-                    
-                    tempPosts.insert(post, at: 0)
+                   let data = childSnapshot.value as? [String:Any],
+                   childSnapshot.key != firstPost?.id{
+                    Post.parse(key: childSnapshot.key, data: data, completion: { (post) in
+                        print("\(tempPosts)tempPostssssinNewPostQuery")
+                        tempPosts.insert(post, at: 0)
+                        
+                        self.posts.insert(contentsOf: tempPosts, at: 0)
+                        
+                        let newIndexPaths = (0..<tempPosts.count).map { i in
+                            return IndexPath(row: i, section: 0)
+                        }
+                        
+                        self.refreshControl.endRefreshing()
+                        self.postTableView.insertRows(at: newIndexPaths, with: .top)
+                        self.postTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                        
+                        self.listenForNewPosts()
+                    })
                 }
             }
-            
-            self.posts.insert(contentsOf: tempPosts, at: 0)
-            
-            let newIndexPaths = (0..<tempPosts.count).map { i in
-                return IndexPath(row: i, section: 0)
-            }
-            
-            self.refreshControl.endRefreshing()
-            self.postTableView.insertRows(at: newIndexPaths, with: .top)
-            self.postTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-            
-            self.listenForNewPosts()
             
         })
     }
@@ -125,7 +128,9 @@ class HomeViewController: UIViewController {
         if offsetY > contentHeight - scrollView.frame.size.height * leadingScreensForBatching {
             
             if !fetchingMore && !endReached {
+                print("posts before batch fetch: \(posts)")
                 beginBatchFetch()
+                print("posts after batch fetch: \(posts)")
             }
         }
     }
@@ -135,18 +140,23 @@ class HomeViewController: UIViewController {
         oldPostsQuery.queryLimited(toLast: 20).observeSingleEvent(of: .value, with: { snapshot in
             var tempPosts = [Post]()
             
+            var numOfChildThroughFor = 0
             let lastPost = self.posts.last
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let data = childSnapshot.value as? [String:Any],
-                    let post = Post.parse(childSnapshot.key, data),
-                    childSnapshot.key != lastPost?.id {
-                    
-                    tempPosts.insert(post, at: 0)
+                    childSnapshot.key != lastPost?.id{
+                    Post.parse(key: childSnapshot.key, data: data, completion: { (post) in
+                        numOfChildThroughFor += 1
+                        print("fetchPosts\(post)")
+                        tempPosts.insert(post, at: 0)
+                        if numOfChildThroughFor == snapshot.childrenCount {
+                            return completion(tempPosts)
+                        }
+                        print("inside fetch posts temp posts: \(tempPosts)")
+                    })
                 }
             }
-            
-            return completion(tempPosts)
         })
     }
     
@@ -159,6 +169,8 @@ class HomeViewController: UIViewController {
             self.fetchingMore = false
             self.endReached = newPosts.count == 0
             UIView.performWithoutAnimation {
+                print("POSTSSSSS")
+                print(self.posts)
                 self.postTableView.reloadData()
                 
                 print("above listen for new posts")
@@ -177,23 +189,18 @@ class HomeViewController: UIViewController {
         stopListeningForNewPosts()
         
         postListenerHandle = newPostsQuery.observe(.childAdded, with: { snapshot in
-            print("key comparisons")
-            print(self.posts.first?.id)
-            print(self.posts.first?.content)
             print(snapshot.key)
             if snapshot.key != self.posts.first?.id,
-                let data = snapshot.value as? [String:Any],
-                let post = Post.parse(snapshot.key, data) {
-                
-                print(post.author.firstName)
-                self.stopListeningForNewPosts()
-                
-                if snapshot.key == self.lastUploadedPostID {
-                    print("key equals id")
-                    self.handleRefresh()
-                    self.lastUploadedPostID = nil
-                } else {
-                   //self.toggleSeeNewPostsButton(hidden: false)
+               let data = snapshot.value as? [String:Any] {
+                Post.parse(key: snapshot.key, data: data) { (post) in
+                    self.stopListeningForNewPosts()
+                    
+                    if snapshot.key == self.lastUploadedPostID {
+                        self.handleRefresh()
+                        self.lastUploadedPostID = nil
+                    } else {
+                       //self.toggleSeeNewPostsButton(hidden: false)
+                    }
                 }
             }
         })
@@ -228,7 +235,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     //height for each row
     func tableView(_ tatbleView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 372
+        return 400
     }
     
     //number of sections
@@ -253,11 +260,47 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: postTableCellId, for: indexPath) as! PostTableViewCell
             cell.set(post: posts[indexPath.row])
+            print("YEEEETTTTTT")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as! LoadingCell
             cell.spinner.startAnimating()
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "postInDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postInDetailSegue" {
+            let indexPath = postTableView.indexPathForSelectedRow
+            let postInDepthVC = segue.destination as! PostDepthViewController
+            let postAtIndex:Post = posts[indexPath!.row]
+            postInDepthVC.postTitle = postAtIndex.title
+            postInDepthVC.firstLastName = postAtIndex.author.firstName + " " + postAtIndex.author.lastName
+            postInDepthVC.headline = postAtIndex.author.headline
+            postInDepthVC.content = postAtIndex.content
+            postInDepthVC.postId = postAtIndex.id
+            
+            ImageService.getImage(withURL: postAtIndex.author.profilePhotoURL) { image, url in
+                let _post = postAtIndex
+                if _post.image.absoluteString == url.absoluteString {
+                    postInDepthVC.profilePhoto = image!
+                } else {
+                    print("Not the right image")
+                }
+            }
+            
+            ImageService.getImage(withURL: postAtIndex.image) { image, url in
+                let _post = postAtIndex
+                if _post.image.absoluteString == url.absoluteString {
+                    postInDepthVC.postImage = image!
+                } else {
+                    print("Not the right image")
+                }
+            }
         }
     }
 }

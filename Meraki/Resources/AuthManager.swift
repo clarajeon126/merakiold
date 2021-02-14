@@ -37,7 +37,7 @@ public class AuthManager {
                     
                 let defaultProfilePhoto = #imageLiteral(resourceName: "blankprofilepic")
                     
-                    StorageManager.shared.uploadProfileImage(defaultProfilePhoto) { (url) in
+                    StorageManager.shared.uploadGeneralProfilePhoto(defaultProfilePhoto) { (url) in
                         if url != nil {
                             DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: self.getUserId() ?? "no user id", userProfilePhotoUrl: url!) { (inserted) in
                                 if inserted {
