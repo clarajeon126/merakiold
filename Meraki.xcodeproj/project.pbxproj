@@ -18,7 +18,6 @@
 		85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B9D25C1B62E002F8650 /* ProfileViewController.swift */; };
 		8521C47025CF03D300510404 /* PostWithUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8521C46F25CF03D300510404 /* PostWithUIImage.swift */; };
 		8521C50325CF604A00510404 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8521C50225CF604A00510404 /* LoadingCell.swift */; };
-		852B59B825C3400100B70621 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B725C3400100B70621 /* MessageViewController.swift */; };
 		852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B59B925C340F900B70621 /* TabBarViewController.swift */; };
 		852B59D925C3623A00B70621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852B59D825C3623A00B70621 /* GoogleService-Info.plist */; };
 		852B59DB25C3647200B70621 /* Starting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852B59DA25C3647200B70621 /* Starting.storyboard */; };
@@ -37,15 +36,11 @@
 		8554392D25D75BE400004FC3 /* EditBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554392C25D75BE400004FC3 /* EditBasicViewController.swift */; };
 		8554392F25D75BF600004FC3 /* EditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8554392E25D75BF600004FC3 /* EditAboutViewController.swift */; };
 		856889CA25C3911E009F88D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856889C925C3911E009F88D5 /* Extensions.swift */; };
-		856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */; };
-		856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */; };
-		856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856B7D4225C7C0C5009C69A0 /* FullBlock.xib */; };
 		856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */; };
 		856B7D6825C87245009C69A0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6725C87245009C69A0 /* SettingsViewController.swift */; };
 		856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */; };
 		856B7D6C25C873EF009C69A0 /* CreateOpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */; };
 		856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */; };
-		856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */; };
 		856B7D7225C91679009C69A0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856B7D7125C91678009C69A0 /* Post.swift */; };
 		857F363025CE578D00AA9BD3 /* ImageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F362F25CE578D00AA9BD3 /* ImageServices.swift */; };
 		8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */; };
@@ -55,9 +50,15 @@
 		859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C745225CCB6020002DDC5 /* PostTableViewCell.swift */; };
 		859C745525CCB6020002DDC5 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859C745325CCB6020002DDC5 /* PostTableViewCell.xib */; };
 		859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859C746325CCE58A0002DDC5 /* UserProfile.swift */; };
+		859DE51C25DAAD2B00BD49CF /* Opportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DE51B25DAAD2B00BD49CF /* Opportunity.swift */; };
+		859DE53C25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DE53A25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.swift */; };
+		859DE53D25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859DE53B25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.xib */; };
+		859DE56525DC10F800BD49CF /* userResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DE56325DC10F800BD49CF /* userResultsTableViewCell.swift */; };
+		859DE56625DC10F800BD49CF /* userResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859DE56425DC10F800BD49CF /* userResultsTableViewCell.xib */; };
 		85D63EAF25D4F512002960FA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D63EAE25D4F512002960FA /* Comment.swift */; };
 		85D63EB725D4F8F2002960FA /* SelfCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D63EB525D4F8F2002960FA /* SelfCommentTableViewCell.swift */; };
 		85D63EB825D4F8F2002960FA /* SelfCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D63EB625D4F8F2002960FA /* SelfCommentTableViewCell.xib */; };
+		85DBFE4C25DCC1D8008494C8 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBFE4B25DCC1D8008494C8 /* OtherProfileViewController.swift */; };
 		85EB3CF725D4DAFD007A4C2C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */; };
 		85EB3CF825D4DAFD007A4C2C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -88,7 +89,6 @@
 		85137B9D25C1B62E002F8650 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8521C46F25CF03D300510404 /* PostWithUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithUIImage.swift; sourceTree = "<group>"; };
 		8521C50225CF604A00510404 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
-		852B59B725C3400100B70621 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		852B59B925C340F900B70621 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		852B59D825C3623A00B70621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		852B59DA25C3647200B70621 /* Starting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Starting.storyboard; sourceTree = "<group>"; };
@@ -107,15 +107,11 @@
 		8554392C25D75BE400004FC3 /* EditBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasicViewController.swift; sourceTree = "<group>"; };
 		8554392E25D75BF600004FC3 /* EditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutViewController.swift; sourceTree = "<group>"; };
 		856889C925C3911E009F88D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpportunityCollectionViewCell.swift; path = "Meraki/View Controllers/Custom Cells, Views, etc/OpportunityCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
-		856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBlockCustomView.swift; sourceTree = "<group>"; };
-		856B7D4225C7C0C5009C69A0 /* FullBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullBlock.xib; sourceTree = "<group>"; };
 		856B7D6525C85008009C69A0 /* OpportunityDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityDepthViewController.swift; sourceTree = "<group>"; };
 		856B7D6725C87245009C69A0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		856B7D6925C8730F009C69A0 /* PostDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDepthViewController.swift; sourceTree = "<group>"; };
 		856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOpportunityViewController.swift; sourceTree = "<group>"; };
 		856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
-		856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDepthViewController.swift; sourceTree = "<group>"; };
 		856B7D7125C91678009C69A0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		857F362F25CE578D00AA9BD3 /* ImageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServices.swift; sourceTree = "<group>"; };
 		8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -125,9 +121,15 @@
 		859C745225CCB6020002DDC5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		859C745325CCB6020002DDC5 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		859C746325CCE58A0002DDC5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		859DE51B25DAAD2B00BD49CF /* Opportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opportunity.swift; sourceTree = "<group>"; };
+		859DE53A25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunitiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		859DE53B25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpportunitiesCollectionViewCell.xib; sourceTree = "<group>"; };
+		859DE56325DC10F800BD49CF /* userResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userResultsTableViewCell.swift; sourceTree = "<group>"; };
+		859DE56425DC10F800BD49CF /* userResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userResultsTableViewCell.xib; sourceTree = "<group>"; };
 		85D63EAE25D4F512002960FA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		85D63EB525D4F8F2002960FA /* SelfCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCommentTableViewCell.swift; sourceTree = "<group>"; };
 		85D63EB625D4F8F2002960FA /* SelfCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfCommentTableViewCell.xib; sourceTree = "<group>"; };
+		85DBFE4B25DCC1D8008494C8 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
 		85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		87A47B901387257CD659DE9B /* Pods-Meraki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meraki.debug.xcconfig"; path = "Target Support Files/Pods-Meraki/Pods-Meraki.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,7 +235,6 @@
 				8588A9CF25C1B742003CADDF /* OpportunityViewController.swift */,
 				8588A9C425C1B6F1003CADDF /* DiscoverViewController.swift */,
 				85137B9D25C1B62E002F8650 /* ProfileViewController.swift */,
-				852B59B725C3400100B70621 /* MessageViewController.swift */,
 			);
 			path = "Main 5";
 			sourceTree = "<group>";
@@ -271,7 +272,7 @@
 		856B7D3625C7BFBF009C69A0 /* Custom Cells, Views, etc */ = {
 			isa = PBXGroup;
 			children = (
-				856B7D3425C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift */,
+				859DE56225DC10D500BD49CF /* User Results Cell */,
 				856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */,
 				85D63EB125D4F887002960FA /* Post Cell */,
 				85D63EB225D4F89C002960FA /* Self Comment Cell */,
@@ -284,8 +285,8 @@
 		856B7D4425C7C0CA009C69A0 /* OpportunityCollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				856B7D3D25C7C064009C69A0 /* FullBlockCustomView.swift */,
-				856B7D4225C7C0C5009C69A0 /* FullBlock.xib */,
+				859DE53A25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.swift */,
+				859DE53B25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.xib */,
 			);
 			path = OpportunityCollectionViews;
 			sourceTree = "<group>";
@@ -299,7 +300,7 @@
 				856B7D6725C87245009C69A0 /* SettingsViewController.swift */,
 				856B7D6B25C873EE009C69A0 /* CreateOpportunityViewController.swift */,
 				856B7D6D25C873F9009C69A0 /* CreatePostViewController.swift */,
-				856B7D6F25C87596009C69A0 /* MessageDepthViewController.swift */,
+				85DBFE4B25DCC1D8008494C8 /* OtherProfileViewController.swift */,
 			);
 			path = SubViewControllers;
 			sourceTree = "<group>";
@@ -329,8 +330,18 @@
 				859C746325CCE58A0002DDC5 /* UserProfile.swift */,
 				8521C46F25CF03D300510404 /* PostWithUIImage.swift */,
 				853B7E0C25D9B44E006E79EB /* AboutUser.swift */,
+				859DE51B25DAAD2B00BD49CF /* Opportunity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		859DE56225DC10D500BD49CF /* User Results Cell */ = {
+			isa = PBXGroup;
+			children = (
+				859DE56325DC10F800BD49CF /* userResultsTableViewCell.swift */,
+				859DE56425DC10F800BD49CF /* userResultsTableViewCell.xib */,
+			);
+			path = "User Results Cell";
 			sourceTree = "<group>";
 		};
 		85D63EB025D4F869002960FA /* Comment Cell */ = {
@@ -430,6 +441,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859DE53D25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.xib in Resources */,
+				859DE56625DC10F800BD49CF /* userResultsTableViewCell.xib in Resources */,
 				853A7B8B25C2642800DF2143 /* Roboto-Thin.ttf in Resources */,
 				853A7B8025C2642800DF2143 /* Roboto-Medium.ttf in Resources */,
 				852B59DB25C3647200B70621 /* Starting.storyboard in Resources */,
@@ -443,7 +456,6 @@
 				85137B9125C1B15F002F8650 /* LaunchScreen.storyboard in Resources */,
 				85137B8E25C1B15F002F8650 /* Assets.xcassets in Resources */,
 				8554392925D74B9400004FC3 /* AboutUserTableViewCell.xib in Resources */,
-				856B7D4325C7C0C5009C69A0 /* FullBlock.xib in Resources */,
 				85137B8C25C1B15E002F8650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,31 +532,31 @@
 				856B7D6E25C873F9009C69A0 /* CreatePostViewController.swift in Sources */,
 				852B59F125C37D3000B70621 /* AuthManager.swift in Sources */,
 				852B59EF25C37D2700B70621 /* DatabaseManager.swift in Sources */,
+				85DBFE4C25DCC1D8008494C8 /* OtherProfileViewController.swift in Sources */,
 				85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */,
 				8588A9CD25C1B715003CADDF /* RegisterViewController.swift in Sources */,
 				856B7D6625C85008009C69A0 /* OpportunityDepthViewController.swift in Sources */,
+				859DE51C25DAAD2B00BD49CF /* Opportunity.swift in Sources */,
 				852B59BA25C340F900B70621 /* TabBarViewController.swift in Sources */,
 				85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */,
-				856B7D3525C7BFB5009C69A0 /* OpportunityCollectionViewCell.swift in Sources */,
-				856B7D7025C87596009C69A0 /* MessageDepthViewController.swift in Sources */,
 				859C746425CCE58A0002DDC5 /* UserProfile.swift in Sources */,
 				859C745425CCB6020002DDC5 /* PostTableViewCell.swift in Sources */,
+				859DE56525DC10F800BD49CF /* userResultsTableViewCell.swift in Sources */,
 				8554392D25D75BE400004FC3 /* EditBasicViewController.swift in Sources */,
 				8554392F25D75BF600004FC3 /* EditAboutViewController.swift in Sources */,
 				856B7D6A25C8730F009C69A0 /* PostDepthViewController.swift in Sources */,
 				85D63EB725D4F8F2002960FA /* SelfCommentTableViewCell.swift in Sources */,
 				856B7D7225C91679009C69A0 /* Post.swift in Sources */,
 				8521C50325CF604A00510404 /* LoadingCell.swift in Sources */,
-				856B7D3E25C7C064009C69A0 /* FullBlockCustomView.swift in Sources */,
 				85137B9E25C1B62E002F8650 /* ProfileViewController.swift in Sources */,
 				853B7E0D25D9B44E006E79EB /* AboutUser.swift in Sources */,
 				856B7D6C25C873EF009C69A0 /* CreateOpportunityViewController.swift in Sources */,
 				85EB3CF725D4DAFD007A4C2C /* CommentTableViewCell.swift in Sources */,
-				852B59B825C3400100B70621 /* MessageViewController.swift in Sources */,
 				8554392825D74B9400004FC3 /* AboutUserTableViewCell.swift in Sources */,
 				85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */,
 				8588A9D025C1B742003CADDF /* OpportunityViewController.swift in Sources */,
 				8588A9C525C1B6F1003CADDF /* DiscoverViewController.swift in Sources */,
+				859DE53C25DAD40E00BD49CF /* OpportunitiesCollectionViewCell.swift in Sources */,
 				85D63EAF25D4F512002960FA /* Comment.swift in Sources */,
 				852B59F325C37DCE00B70621 /* StorageManager.swift in Sources */,
 				856889CA25C3911E009F88D5 /* Extensions.swift in Sources */,

@@ -80,7 +80,7 @@ class EditBasicViewController: UIViewController {
 
 }
 extension EditBasicViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == firstNameTextField {
             lastNameTextField.becomeFirstResponder()
         }
@@ -91,7 +91,7 @@ extension EditBasicViewController: UITextFieldDelegate {
             changeHeadlineButtonTapped(self)
         }
         return true
-    }
+    }*/
 }
 
 extension EditBasicViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

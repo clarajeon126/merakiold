@@ -141,8 +141,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "myPostInDetailSegue" {
             let indexPath = myPostTableView.indexPathForSelectedRow
             let postInDepthVC = segue.destination as! PostDepthViewController
-            let postAtIndex:Post = myPosts[indexPath!.row]
-            postInDepthVC.postTitle = postAtIndex.title
+            postInDepthVC.postInQuestion = myPosts[indexPath!.row]
+            /*postInDepthVC.postTitle = postAtIndex.title
             postInDepthVC.firstLastName = postAtIndex.author.firstName + " " + postAtIndex.author.lastName
             postInDepthVC.headline = postAtIndex.author.headline
             postInDepthVC.content = postAtIndex.content
@@ -160,7 +160,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     print("Not the right image")
                 }
-            }
+            }*/
         }
     }
 }

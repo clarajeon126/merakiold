@@ -20,35 +20,38 @@ public class DatabaseManager {
     private let userDatabase = Database.database().reference().child("users")
     
     private let postDatabase = Database.database().reference().child("posts")
+    
+    private let opportunityDatabase = Database.database().reference().child("opportunity")
     //to check whether a user can be created or not
     public func canCreateNewUser(with email: String, username: String, completion: (Bool) -> Void){
         completion(true)
     }
-    
+
     //create a copy with a diferent user id for google sign in
     public func changeUid() {
         let uid = Auth.auth().currentUser!.uid
-        userDatabase.child("googleid").observe(.value) { (snapshot) in
-            if let dictionary = snapshot.value as? [String: Any] {
-                let email = dictionary["email"] as! String
-                let username = dictionary["username"] as! String
-                let firstName = dictionary["firstName"] as! String
-                let lastName = dictionary["lastName"] as! String
-                let profilePicString = dictionary["profilePhoto"] as! String
-                let profilePicUrl = URL(string: profilePicString)
-                
-                DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: uid, userProfilePhotoUrl: profilePicUrl!) { (success) in
-                    if success {
-                        let ref = self.userDatabase.child("googleid").ref
-                        
-                        ref.removeValue()
-                    }
-                    else {
-                        
+        print("UIDDDDDD\(uid)")
+            userDatabase.child("googleid").observe(.value) { (snapshot) in
+                if let dictionary = snapshot.value as? [String: Any] {
+                    let email = dictionary["email"] as! String
+                    let username = dictionary["username"] as! String
+                    let firstName = dictionary["firstName"] as! String
+                    let lastName = dictionary["lastName"] as! String
+                    let profilePicString = dictionary["profilePhoto"] as! String
+                    let profilePicUrl = URL(string: profilePicString)
+                    
+                    DatabaseManager.shared.insertNewUser(with: email, username: username, firstName: firstName, lastName: lastName, uid: Auth.auth().currentUser!.uid, userProfilePhotoUrl: profilePicUrl!) { (success) in
+                        if success {
+                            let ref = self.userDatabase.child("googleid").ref
+                            
+                            ref.removeValue()
+                        }
+                        else {
+                            
+                        }
                     }
                 }
             }
-        }
 
     }
     
@@ -57,17 +60,19 @@ public class DatabaseManager {
     public func insertNewUser(with email: String, username: String, firstName: String, lastName: String, uid: String, userProfilePhotoUrl: URL, completion: @escaping (Bool) -> Void){
         
         UserProfile.currentUserProfile = UserProfile(uid: uid , username: username, firstName: firstName, lastName: lastName, headline: "Amazing user of Meraki!", profilePhotoURL: userProfilePhotoUrl)
-        userDatabase.child(uid).setValue(["firstName": firstName, "lastName": lastName, "email": email, "username": username, "headline": "Amazing user of Meraki!",
-                                                     "profilePhoto": userProfilePhotoUrl.absoluteString]) { (error, _) in
-            if error == nil {
-                completion(true)
-                return
+        
+        
+        userDatabase.child(uid).setValue(["uid": uid, "firstName": firstName, "firstNameLower": firstName.lowercased(), "lastNameLower": lastName.lowercased(),"lastName": lastName, "email": email, "username": username, "headline": "Amazing user of Meraki!",
+                                                         "profilePhoto": userProfilePhotoUrl.absoluteString]) { (error, _) in
+                if error == nil {
+                    completion(true)
+                    return
+                }
+                else {
+                    completion(false)
+                    return
+                }
             }
-            else {
-                completion(false)
-                return
-            }
-        }
     }
     
     public func observeUserProfile(_ uid: String, completion: @escaping ((_ userProfile: UserProfile?) -> ())) {
@@ -122,6 +127,37 @@ public class DatabaseManager {
             }
         }
     }
+
+    public func getSpecificUserPost(uid: String, completion:@escaping (_ posts:[Post])->()){
+    
+    var onlyUserPostsQuery: DatabaseQuery {
+        var onlyUserQueryRef:DatabaseQuery
+        
+        onlyUserQueryRef = postDatabase.queryOrdered(byChild: "uid").queryEqual(toValue: uid)
+        return onlyUserQueryRef
+    }
+    
+    onlyUserPostsQuery.observeSingleEvent(of: .value) { (snapshot) in
+        var userPosts = [Post]()
+        var numOfChildThroughFor = 0
+        
+        for child in snapshot.children {
+            if let childSnapshot = child as? DataSnapshot,
+               let data = childSnapshot.value as? [String:Any]{
+                Post.parse(key: childSnapshot.key, data: data) { (post) in
+                    userPosts.insert(post, at: 0)
+                    numOfChildThroughFor += 1
+                    print(userPosts)
+                    if numOfChildThroughFor == snapshot.childrenCount {
+                        print(userPosts)
+                        return completion(userPosts)
+                    }
+                }
+                
+            }
+        }
+    }
+}
     
     public func insertComments(postId: String, content: String){
         let userUid = UserProfile.currentUserProfile?.uid
@@ -242,11 +278,105 @@ public class DatabaseManager {
             }
         }
     }
-    //public func getAboutUserInfo(
-
-    /*public func getPostData() -> Post {
+    
+    public func addOpportunity(title: String, subtitle: String, description: String, dateStart:Double, dateEnd: Double, image: UIImage, category: String) {
         
-    }*/
-    //insert posst (discussion, question, fun, other)
+        guard let userUid = UserProfile.currentUserProfile?.uid else {
+            return
+        }
+        let opportunityChildRef = opportunityDatabase.childByAutoId()
+        let keyOfOpportunity = opportunityChildRef.key
+        
+        StorageManager.shared.uploadOpportunityPhoto(image: image, withAutoId: keyOfOpportunity!) { (url) in
+            
+            let opportunityObj = ["uid": userUid, "id": keyOfOpportunity, "title": title, "subtitle": subtitle, "description": description, "dateStart" : dateStart, "dateEnd": dateEnd, "imageUrl": url!.absoluteString, "category": category, "timestamp": [".sv":"timestamp"] ] as [String : Any]
+            
+            opportunityChildRef.setValue(opportunityObj)
+        }
+    }
+    
+    var queryOpportunitiesByTime: DatabaseQuery {
+        var opportunityQueryRef: DatabaseQuery
+        
+        opportunityQueryRef = opportunityDatabase.queryOrdered(byChild: "timestamp")
+        return opportunityQueryRef
+    }
+    
+    public func arrayOfOpportunityByTime(completion: @escaping (_ opportunities: [Opportunity])->()) {
+        queryOpportunitiesByTime.observeSingleEvent(of: .value) { (snapshot) in
+            var opportunities = [Opportunity]()
+            var numOfChildThroughFor = 0
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot {
+                    if let data = childSnapshot.value as? [String:Any]{
+                        Opportunity.parse(data: data) { (opportunity) in
+                            numOfChildThroughFor += 1
+                            opportunities.insert(opportunity, at: 0)
+                            if numOfChildThroughFor == snapshot.childrenCount {
+                                return completion(opportunities)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    //query users that start with a specific string
+    public func queryUsers(searchTerm: String, completion: @escaping (_ searchUserResults: [UserProfile])->()){
+        print(searchTerm)
+        var queryWithTermUser: DatabaseQuery {
+            var userTermQueryRef : DatabaseQuery
+            userTermQueryRef = userDatabase.queryOrdered(byChild: "firstNameLower").queryStarting(atValue: searchTerm).queryEnding(atValue: searchTerm + "\u{f8ff}")
+            return userTermQueryRef
+        }
+        
+        var queryWithTermUserLast: DatabaseQuery {
+            var userTermQueryRef : DatabaseQuery
+            userTermQueryRef = Database.database().reference().child("users").queryOrdered(byChild: "lastNameLower").queryStarting(atValue: searchTerm).queryEnding(atValue: searchTerm + "\u{f8ff}")
+            return userTermQueryRef
+        }
+        
+        print("search")
+        var searchUserResults = [UserProfile]()
+        
+        queryWithTermUser.observeSingleEvent(of: .value) { (snapshot) in
+            var numOfChildThroughFor = 0
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot {
+                    if let data = childSnapshot.value as? [String:Any]{
+                        UserProfile.parse(data: data) { (userProfile) in
+                            numOfChildThroughFor += 1
+                            searchUserResults.insert(userProfile, at: 0)
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        queryWithTermUserLast.observeSingleEvent(of: .value) { (snapshot) in
+            var numOfChildThroughFor = 0
+            if snapshot.childrenCount == 0 {
+                return completion(searchUserResults)
+            }
+            
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot {
+                    if let data = childSnapshot.value as? [String:Any]{
+                        UserProfile.parse(data: data) { (userProfile) in
+                            numOfChildThroughFor += 1
+                            searchUserResults.insert(userProfile, at: 0)
+                            if numOfChildThroughFor == snapshot.childrenCount {
+                                return completion(searchUserResults)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
     
 }

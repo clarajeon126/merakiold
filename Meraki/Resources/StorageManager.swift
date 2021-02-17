@@ -115,4 +115,26 @@ public class StorageManager {
             }
         }
     }
+    
+    public func uploadOpportunityPhoto(image: UIImage, withAutoId: String, completion: @escaping ((_ url: URL?)->())){
+        let storageRef = Storage.storage().reference().child("OpportunityPhotos")
+        let postPhotoRef = storageRef.child(withAutoId)
+            
+            guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+            
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            
+            postPhotoRef.putData(imageData, metadata: metaData) { metaData, error in
+                if error == nil, metaData != nil {
+                    
+                    postPhotoRef.downloadURL { url, error in
+                        completion(url)
+                    }
+                } else {
+                    // failed
+                    completion(nil)
+                }
+            }
+    }
 }

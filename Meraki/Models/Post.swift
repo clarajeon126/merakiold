@@ -28,6 +28,17 @@ public class Post {
         self.createdAt = Date(timeIntervalSince1970: timestamp / 1000 )
     }
     
+    init(){
+        self.id = " "
+        self.type = " "
+        self.title = " "
+        self.isAnonymous = false
+        self.image = UserProfile.currentUserProfile!.profilePhotoURL
+        self.content = " "
+        self.author = UserProfile()
+        self.createdAt = Date()
+    }
+    
     static func parse(key:String, data:[String:Any], completion: @escaping (_ post: Post)->()) {
         
         print("parsing post")

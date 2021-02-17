@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
     
     @objc private func userDidSignInGoogle(_ notification: Notification) {
         // Update screen after user successfully signed in
-        print(Auth.auth().currentUser)
+        print(Auth.auth().currentUser!.uid)
         DatabaseManager.shared.changeUid()
         updateScreen()
     }

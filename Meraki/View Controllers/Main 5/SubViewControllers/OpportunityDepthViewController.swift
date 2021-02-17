@@ -9,9 +9,35 @@ import UIKit
 
 class OpportunityDepthViewController: UIViewController {
 
+    var opportunity = Opportunity()
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var basicInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imageView.image = nil
+        ImageService.getImage(withURL: opportunity.imageUrl) { (image, url) in
+            self.imageView.image = image
+        }
+        mainTitle.text = opportunity.title
+        subTitle.text = opportunity.subtitle
+        basicInfo.text = opportunity.description
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        
+        let startDate = dateFormatter.string(from: opportunity.dateStart)
+        let endDate = dateFormatter.string(from: opportunity.dateEnd)
+        
+        dateLabel.text = "\(startDate) to \(endDate)"
+        
+        
         // Do any additional setup after loading the view.
     }
     

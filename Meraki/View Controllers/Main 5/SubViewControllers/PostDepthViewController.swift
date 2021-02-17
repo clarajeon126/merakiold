@@ -9,27 +9,23 @@ import UIKit
 
 class PostDepthViewController: UIViewController {
 
+    var postInQuestion = Post()
+    
     @IBOutlet weak var profilePhotoImageView: UIImageView!
-    var profilePhoto = UIImage()
     
     @IBOutlet weak var titleLabel: UILabel!
-    var postTitle = String()
     
     @IBOutlet weak var userFirstLastNameLabel: UILabel!
-    var firstLastName = String()
     
     @IBOutlet weak var headlineLabel: UILabel!
-    var headline = String()
     
     @IBOutlet weak var contentLabel: UILabel!
-    var content = String()
     
     @IBOutlet weak var overallImageView: UIImageView!
-    var postImage = UIImage()
+
     
     @IBOutlet weak var commentsTableView: UITableView!
 
-    var postId = String()
     var comments = [Comment]()
     
     override func viewDidLoad() {
@@ -39,14 +35,20 @@ class PostDepthViewController: UIViewController {
         commentsTableView.register(UINib.init(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCellId")
         
         self.profilePhotoImageView.image = nil
-        self.profilePhotoImageView.image = self.profilePhoto
+        ImageService.getImage(withURL: postInQuestion.author.profilePhotoURL) { (profileImage, url) in
+            self.profilePhotoImageView.image = profileImage
+        }
+        
+        //self.profilePhotoImageView.image =
         self.profilePhotoImageView.layer.cornerRadius = self.profilePhotoImageView.frame.width / 2
-        self.titleLabel.text = self.postTitle
-        self.userFirstLastNameLabel.text = self.firstLastName
-        self.headlineLabel.text = self.headline
-        self.contentLabel.text = self.content
+        self.titleLabel.text = postInQuestion.title
+        self.userFirstLastNameLabel.text = "\(postInQuestion.author.firstName) \(postInQuestion.author.lastName)"
+        self.headlineLabel.text = postInQuestion.author.headline
+        self.contentLabel.text = postInQuestion.content
         self.overallImageView.image = nil
-        self.overallImageView.image = self.postImage
+        ImageService.getImage(withURL: postInQuestion.image) { (postImage, url) in
+            self.overallImageView.image = postImage
+        }
     
         //setting up comments table view
         commentsTableView.dataSource = self
@@ -56,7 +58,7 @@ class PostDepthViewController: UIViewController {
         updateCommentArrayAndTableView()
     }
     public func updateCommentArrayAndTableView(){
-        DatabaseManager.shared.createCommentArrayForPost(postId: postId) { (commentArray) in
+        DatabaseManager.shared.createCommentArrayForPost(postId: postInQuestion.id) { (commentArray) in
             self.comments.removeAll()
             self.comments.insert(contentsOf: commentArray, at: 0)
             print(self.comments)
@@ -85,7 +87,7 @@ extension PostDepthViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = commentsTableView.dequeueReusableCell(withIdentifier: "selfCommentCell") as! SelfCommentTableViewCell
-            cell.postId = postId
+            cell.postId = postInQuestion.id
             cell.postButton.addTarget(self, action: #selector(postTapped(_:)), for: .touchUpInside)
             return cell
         }

@@ -10,13 +10,13 @@ import FirebaseAuth
 import FirebaseDatabase
 import GoogleSignIn
 
+public var posts = [Post]()
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var introductionLabel: UILabel!
     @IBOutlet weak var postTableView: UITableView!
     
     let postTableCellId = "postCell"
-    var posts = [Post]()
     var fetchingMore = false
     var endReached = false
     let leadingScreensForBatching:CGFloat = 3.0
@@ -56,6 +56,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
         // Do any additional setup after loading the view.
         postTableView.register(UINib.init(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: postTableCellId)
         postTableView.register(LoadingCell.self, forCellReuseIdentifier: "loadingCell")
@@ -95,7 +97,7 @@ class HomeViewController: UIViewController {
         newPostsQuery.queryLimited(toFirst: 20).observeSingleEvent(of: .value, with: { snapshot in
             var tempPosts = [Post]()
             
-            let firstPost = self.posts.first
+            let firstPost = posts.first
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                    let data = childSnapshot.value as? [String:Any],
@@ -104,7 +106,7 @@ class HomeViewController: UIViewController {
                         print("\(tempPosts)tempPostssssinNewPostQuery")
                         tempPosts.insert(post, at: 0)
                         
-                        self.posts.insert(contentsOf: tempPosts, at: 0)
+                        posts.insert(contentsOf: tempPosts, at: 0)
                         
                         let newIndexPaths = (0..<tempPosts.count).map { i in
                             return IndexPath(row: i, section: 0)
@@ -141,7 +143,7 @@ class HomeViewController: UIViewController {
             var tempPosts = [Post]()
             
             var numOfChildThroughFor = 0
-            let lastPost = self.posts.last
+            let lastPost = posts.last
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let data = childSnapshot.value as? [String:Any],
@@ -165,12 +167,11 @@ class HomeViewController: UIViewController {
         self.postTableView.reloadSections(IndexSet(integer: 1), with: .fade)
         
         fetchPosts { newPosts in
-            self.posts.append(contentsOf: newPosts)
+            posts.append(contentsOf: newPosts)
             self.fetchingMore = false
             self.endReached = newPosts.count == 0
             UIView.performWithoutAnimation {
                 print("POSTSSSSS")
-                print(self.posts)
                 self.postTableView.reloadData()
                 
                 print("above listen for new posts")
@@ -190,7 +191,7 @@ class HomeViewController: UIViewController {
         
         postListenerHandle = newPostsQuery.observe(.childAdded, with: { snapshot in
             print(snapshot.key)
-            if snapshot.key != self.posts.first?.id,
+            if snapshot.key != posts.first?.id,
                let data = snapshot.value as? [String:Any] {
                 Post.parse(key: snapshot.key, data: data) { (post) in
                     self.stopListeningForNewPosts()
@@ -222,8 +223,10 @@ class HomeViewController: UIViewController {
             present(loginVC, animated: false, completion: nil)
         }
         else{
+print("elseobserve\(Auth.auth().currentUser!.uid)")
             DatabaseManager.shared.observeUserProfile(Auth.auth().currentUser!.uid) { (userProfile) in
                 UserProfile.currentUserProfile = userProfile
+                
             }
         }
     }
@@ -278,7 +281,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let indexPath = postTableView.indexPathForSelectedRow
             let postInDepthVC = segue.destination as! PostDepthViewController
             let postAtIndex:Post = posts[indexPath!.row]
-            postInDepthVC.postTitle = postAtIndex.title
+            postInDepthVC.postInQuestion = posts[indexPath!.row]
+            /*postInDepthVC.postTitle = postAtIndex.title
             postInDepthVC.firstLastName = postAtIndex.author.firstName + " " + postAtIndex.author.lastName
             postInDepthVC.headline = postAtIndex.author.headline
             postInDepthVC.content = postAtIndex.content
@@ -300,7 +304,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     print("Not the right image")
                 }
-            }
+            }*/
         }
     }
 }

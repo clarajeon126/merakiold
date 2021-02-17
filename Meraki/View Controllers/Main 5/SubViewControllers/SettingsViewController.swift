@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
         AuthManager.shared.logOut(completion: {success in
             DispatchQueue.main.async {
                 if success {
+                    UserProfile.currentUserProfile = nil
+                    
                     let startingStoryBoard = UIStoryboard(name: "Starting", bundle: nil)
                     let loginVC = startingStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
                     loginVC.modalPresentationStyle = .fullScreen
