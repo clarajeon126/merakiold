@@ -2,7 +2,7 @@
 
 a professional social media app for women in STEM.
 a place where women can connect, find, and expand STEM.
-a app that innovates the world of STEM to the next level.
+an app that innovates the world of STEM to the next level.
 
 meet...
 
