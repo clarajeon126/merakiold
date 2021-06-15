@@ -23,5 +23,9 @@ meraki [may-rah-kee] (adjective) This is a word that modern Greeks often use to 
 # technology used
 Firebase was used the database backend, and Cocoapods were used to integrate Firebase and a Gooogle Authentication.
 
+# instructions
+In order to download the app, a computer that runs macOS is necessary that has XCode downloaded. To download XCode, head to the App Store on your computer.
+Afterwards, clone the repository, and open it up through XCode. There will be a run button that looks like a triangle to the top left and pressing on that button will allow you to simulate the app on your computer or phone!
+
 # meraki was created for FBLA NLC by Jiyeon (Clara) Jeon. 
 # Thank you~~
