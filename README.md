@@ -23,4 +23,5 @@ meraki [may-rah-kee] (adjective) This is a word that modern Greeks often use to 
 # technology used
 Firebase was used the database backend, and Cocoapods were used to integrate Firebase and a Gooogle Authentication.
 
-# meraki was created for FBLA NLC by Jiyeon (Clara) Jeon. Thank you~~
+# meraki was created for FBLA NLC by Jiyeon (Clara) Jeon. 
+# Thank you~~
