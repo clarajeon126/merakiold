@@ -52,7 +52,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,8 +72,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = settingTableView.dequeueReusableCell(withIdentifier: "signOutCell", for: indexPath)
             return cell
         }
-        else {
+        else if indexPath.row == 3{
             let cell = settingTableView.dequeueReusableCell(withIdentifier: "copyrightsCell", for: indexPath)
+            return cell
+        }
+        else {
+            let cell = settingTableView.dequeueReusableCell(withIdentifier: "bugCell", for: indexPath)
             return cell
         }
     }
@@ -96,6 +100,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.row == 3 {
             performSegue(withIdentifier: "toCredits", sender: self)
+        }
+        else if indexPath.row == 4 {
+            performSegue(withIdentifier: "toBugReport", sender: self)
         }
     }
 }

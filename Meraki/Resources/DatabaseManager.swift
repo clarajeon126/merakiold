@@ -55,6 +55,11 @@ public class DatabaseManager {
 
     }
     
+    public func addFeedback(feedbackMessage: String){
+        let feedback = database.child("feedback").childByAutoId()
+        
+        feedback.setValue(feedbackMessage)
+    }
     
     //inserts a new user into the database
     public func insertNewUser(with email: String, username: String, firstName: String, lastName: String, uid: String, userProfilePhotoUrl: URL, completion: @escaping (Bool) -> Void){
