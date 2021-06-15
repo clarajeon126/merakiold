@@ -1,6 +1,6 @@
 # Welcome to the new face of social media for Women in STEM
 
-a professional social media app for women in STEM.
+a professional social media app for women in STEM. /n
 a place where women can connect, find, and expand STEM.
 an app that innovates the world of STEM to the next level.
 
