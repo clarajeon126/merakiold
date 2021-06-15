@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8511DA3E25C3073A0017ED54 /* Pods_Meraki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */; };
-		8511DA3F25C3073A0017ED54 /* Pods_Meraki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A60FECC2075EF8580A595D42 /* Pods_Meraki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85137B8525C1B15E002F8650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8425C1B15E002F8650 /* AppDelegate.swift */; };
 		85137B8725C1B15E002F8650 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8625C1B15E002F8650 /* SceneDelegate.swift */; };
 		85137B8925C1B15E002F8650 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85137B8825C1B15E002F8650 /* HomeViewController.swift */; };
@@ -62,20 +61,6 @@
 		85EB3CF725D4DAFD007A4C2C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB3CF525D4DAFD007A4C2C /* CommentTableViewCell.swift */; };
 		85EB3CF825D4DAFD007A4C2C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EB3CF625D4DAFD007A4C2C /* CommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8511DA4025C3073A0017ED54 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8511DA3F25C3073A0017ED54 /* Pods_Meraki.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		85137B8125C1B15E002F8650 /* Meraki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meraki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,7 +378,6 @@
 				85137B7F25C1B15E002F8650 /* Resources */,
 				0C2196763053AD6D129646C3 /* [CP] Embed Pods Frameworks */,
 				B82E41A67C01A270BB77478B /* [CP] Copy Pods Resources */,
-				8511DA4025C3073A0017ED54 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

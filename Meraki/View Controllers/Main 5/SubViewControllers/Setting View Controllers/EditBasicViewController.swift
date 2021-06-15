@@ -47,6 +47,7 @@ class EditBasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         
         let currentUser = UserProfile.currentUserProfile!
         // Do any additional setup after loading the view.
